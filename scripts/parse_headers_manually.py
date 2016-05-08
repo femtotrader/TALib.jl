@@ -10,6 +10,7 @@ import os
 import re
 import sys
 import json
+import yaml
 
 from talib import abstract
 from collections import OrderedDict
@@ -99,6 +100,11 @@ def main():
     print("save to %r" % filename)
     with open(filename, 'w') as fd:
         json.dump(d_functions, fd, indent=4)
+
+    filename = 'functions_manual_parsing.yaml'
+    print("save to %r" % filename)
+    with open(filename, 'w') as fd:
+        yaml.dump(d_functions, fd, indent=4)
     
 
     # just for printing

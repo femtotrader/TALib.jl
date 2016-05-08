@@ -10,6 +10,7 @@ import os
 from pyclibrary import CParser
 import sys
 import json
+import yaml
 
 from talib import abstract
 from collections import OrderedDict
@@ -44,7 +45,7 @@ def main():
     ta_func_header="/usr/local/include/ta-lib/ta_func.h"
     parser = CParser(ta_func_header)
     print("parsed")
-    #parser.print_all()
+    parser.print_all()
 
     d_functions = parser.defs['functions']
 
@@ -74,6 +75,12 @@ def main():
     print("save to %r" % filename)
     with open(filename, 'w') as fd:
         json.dump(d_functions, fd, indent=4)
+
+    filename = 'functions.yaml'
+    print("save to %r" % filename)
+    with open(filename, 'w') as fd:
+        yaml.dump(d_functions, fd, indent=4)
+
 
 
 if __name__ == '__main__':
