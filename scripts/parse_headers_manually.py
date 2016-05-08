@@ -9,6 +9,7 @@ from __future__ import print_function
 import os
 import re
 import sys
+import json
 
 from talib import abstract
 from collections import OrderedDict
@@ -54,41 +55,49 @@ def main():
                     tmp = []
 
     d_functions = OrderedDict()
+    p = re.compile("(\w+)\s+(\w+)\s*\(\s*(.*)\)")  # thanks to https://regex101.com/
+
     for proto in functions:
-        proto = proto.strip()
 
-        i = proto.index('(')
-        name = proto[:i].split()[1]
-        args = proto[i:].split(',')
-        args = [re.sub('[\(\);]', '', s).strip() for s in args]
-        shortname = name[3:]
+        for proto in proto.split(";"):
+            proto = proto.strip()
+            if proto != '':
+                print(proto)
 
-        key = shortname  # key for dict is shortname
+                m = p.match(proto)
+                ret_typ, shortname, args = m.groups()
+                args = list(map(lambda s: s.strip(), args.strip().split(",")))
 
-        d_functions[key] = dict()
-        d_functions[key]['prototype'] = proto
-        is_float = proto.startswith('TA_RetCode TA_S_')
-        d_functions[key]['is_float'] = is_float
-        is_indicator = not proto.startswith('TA_RetCode TA_Set') and not proto.startswith('TA_RetCode TA_Restore')
-        d_functions[key]['is_indicator'] = is_indicator
-        is_lookback = '_Lookback' in proto
-        d_functions[key]['is_lookback'] = is_lookback
+                key = shortname  # key for dict is shortname
 
-        #d_functions[key]['shortname'] = shortname
+                d_functions[key] = dict()
+                d_functions[key]['prototype'] = proto
+                d_functions[key]['args'] = args
+                d_functions[key]['ret_typ'] = ret_typ
+                is_float = proto.startswith('TA_RetCode TA_S_')
+                d_functions[key]['is_float'] = is_float
+                is_indicator = not proto.startswith('TA_RetCode TA_Set') and not proto.startswith('TA_RetCode TA_Restore')
+                d_functions[key]['is_indicator'] = is_indicator
+                is_lookback = '_Lookback' in proto
+                d_functions[key]['is_lookback'] = is_lookback
 
-        if not is_float and not is_lookback and is_indicator:
-            func_info = abstract.Function(shortname).info
-        else:
-            func_info = {}
-        d_functions[key]['info'] = func_info
+                #d_functions[key]['shortname'] = shortname
+
+                #if not is_float and not is_lookback and is_indicator:
+                try:
+                    func_info = abstract.Function(shortname).info
+                except:
+                    func_info = {}
+                d_functions[key]['info'] = func_info
 
     #print(d_functions)
-    import json
-    print(json.dumps(d_functions, indent=4))
+    #print(json.dumps(d_functions, indent=4))
 
     print(len(d_functions))
 
-    with open('functions.json', 'w') as fd:
+    filename = 'functions_manual_parsing.json'
+    print("save to %r" % filename)
+    with open(filename, 'w') as fd:
         json.dump(d_functions, fd, indent=4)
     
 
