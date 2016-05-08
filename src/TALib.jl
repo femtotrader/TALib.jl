@@ -1,9 +1,17 @@
 module TALib
 
-export GetVersionString, GetVersionMajor, GetVersionMinor, GetVersionBuild,
-    GetVersionDate, GetVersionTime,
-    Initialize, Shutdown,
-    COS, SIN, ACOS, ASIN, TAN, ATAN
+
+to_export = [:GetVersionString, :GetVersionMajor, :GetVersionMinor, :GetVersionBuild,
+    :GetVersionDate, :GetVersionTime,
+    :Initialize, :Shutdown,
+    :COS, :SIN, :ACOS, :ASIN, :TAN, :ATAN
+]
+
+for f in to_export
+    @eval begin
+        export ($f)
+    end
+end
 
 const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
 
