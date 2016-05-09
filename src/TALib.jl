@@ -4,7 +4,8 @@ module TALib
 to_export = [:GetVersionString, :GetVersionMajor, :GetVersionMinor, :GetVersionBuild,
     :GetVersionDate, :GetVersionTime,
     :Initialize, :Shutdown,
-    :COS, :SIN, :ACOS, :ASIN, :TAN, :ATAN
+    :COS, :SIN, :ACOS, :ASIN, :TAN, :ATAN,
+    :MA
 ]
 
 for f in to_export
@@ -94,10 +95,27 @@ _TA_COS(startIdx, endIdx, inReal, outBegIdx, outNBElement, outReal) = ccall(
 function COS(inReal::Array{Float64,1})
     N = length(inReal)
     outReal = zeros(N)
-    retCode = _TA_COS(0, N - 1, inReal, Ref{Cint}(0), Ref{Cint}(0), outReal)
-    _ta_check_success("COS", retCode)
+    ret_code = _TA_COS(0, N - 1, inReal, Ref{Cint}(0), Ref{Cint}(0), outReal)
+    _ta_check_success("COS", ret_code)
     outReal
 end
+
+
+function COS(inReal::Array{Float64,1})
+    N = length(inReal)
+    #outReal = zeros(N)
+    outReal = fill(NaN, N)
+    ta_func = (startIdx, endIdx, inReal, outBegIdx, outNBElement, outReal) -> ccall(
+        (:TA_COS, TA_LIB_PATH), Cint, 
+        (Cint, Cint, Ptr{Cdouble}, Ptr{Cint}, Ptr{Cint}, Ptr{Cdouble}), 
+        startIdx, endIdx, inReal, outBegIdx, outNBElement, outReal
+    )
+    ret_code = ta_func(0, N - 1, inReal, Ref{Cint}(0), Ref{Cint}(0), outReal)    
+    _ta_check_success("COS", ret_code)
+    outReal
+end
+
+
 =#
 
 
@@ -120,6 +138,20 @@ for f in [:COS, :SIN, :ACOS, :ASIN, :TAN, :ATAN]
         end
     end
 
+end
+
+
+function MA(inReal::Array{Float64,1}, timeperiod=30, matype=0)
+    N = length(inReal)
+    outReal = fill(NaN, N)
+    ta_func = (startIdx, endIdx, inReal, timeperiod, matype, outBegIdx, outNBElement, outReal) -> ccall(
+        (:TA_MA, TA_LIB_PATH), Cint, 
+        (Cint, Cint, Ptr{Cdouble}, Cint, Cint, Ptr{Cint}, Ptr{Cint}, Ptr{Cdouble}), 
+        startIdx, endIdx, inReal, timeperiod, matype, outBegIdx, outNBElement, outReal
+    )
+    ret_code = ta_func(0, N - 1, inReal, timeperiod, matype, Ref{Cint}(0), Ref{Cint}(0), outReal)    
+    _ta_check_success("COS", ret_code)
+    outReal
 end
 
 

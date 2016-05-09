@@ -5,7 +5,7 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
 
 =#
 
-@enum(RetCode, 
+@enum(TA_RetCode, 
     TA_SUCCESS = 0,
     TA_LIB_NOT_INITIALIZE = 1,
     TA_BAD_PARAM = 2,
@@ -27,9 +27,12 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
     TA_UNKNOWN_ERR = 0xFFFF
 )
 
-@enum(Compatibility, TA_COMPATIBILITY_DEFAULT = 0, TA_COMPATIBILITY_METASTOCK = 1)
+@enum(TA_Compatibility,
+    TA_COMPATIBILITY_DEFAULT = 0,
+    TA_COMPATIBILITY_METASTOCK = 1
+)
 
-@enum(MAType,
+@enum(TA_MAType,
     TA_MAType_SMA = 0,
     TA_MAType_EMA = 1,
     TA_MAType_WMA = 2,
@@ -41,7 +44,7 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
     TA_MAType_T3 = 8
 )
 
-@enum(FuncUnstId,
+@enum(TA_FuncUnstId,
     TA_FUNC_UNST_ADX = 0,
     TA_FUNC_UNST_ADXR = 1,
     TA_FUNC_UNST_ATR = 2,
@@ -69,13 +72,13 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
     TA_FUNC_UNST_NONE = -1
 )
 
-@enum(RangeType,
+@enum(TA_RangeType,
     TA_RangeType_RealBody = 0,
     TA_RangeType_HighLow = 1,
     TA_RangeType_Shadows = 2
 )
 
-@enum(CandleSettingType,
+@enum(TA_CandleSettingType,
     TA_BodyLong = 0,
     TA_BodyVeryLong = 1,
     TA_BodyShort = 2,
