@@ -1,6 +1,8 @@
 include("src/TALib.jl")
 
 using TALib
+using TALib: TA_MAType_SMA
+
 using DataFrames
 
 for f in [GetVersionString, GetVersionMajor, GetVersionMinor, GetVersionBuild, GetVersionDate, GetVersionTime]
@@ -49,11 +51,15 @@ price = Array(dfOHLCV[:Close])
 println(price)
 
 println("MA")
-outReal = MA(price)
-println(outReal)
+#indic = MA(price)
+indic = MA(price, timeperiod=30, matype=TA_MAType_SMA)
+println(indic)
 
-#using PyPlot
+println(MA(dfOHLCV, price=:Close))
+
+using PyPlot
 #plot(dfOHLCV[:Date], dfOHLCV[:Close])
+plot(dfOHLCV[:Date], dfOHLCV[:Close], dfOHLCV[:Date], indic)
 #=
 plot(dfOHLCV[:Date], dfOHLCV[:Open],
      dfOHLCV[:Date], dfOHLCV[:High],
@@ -61,6 +67,23 @@ plot(dfOHLCV[:Date], dfOHLCV[:Open],
      dfOHLCV[:Date], dfOHLCV[:Close],
 )
 =#
+
+println("BBANDS")
+println(price)
+#indic = BBANDS(price)
+#indic = BBANDS(price, timeperiod=30, nbdevup=2.0, nbdevdn=2.0, matype=TA_MAType_SMA)
+#println(indic)
+indic = BBANDS(dfOHLCV, price=:Close)
+println(indic)
+#=
+plot(dfOHLCV[:Date], dfOHLCV[:Close],
+    dfOHLCV[:Date], indic[:UpperBand],
+    dfOHLCV[:Date], indic[:MiddleBand],
+    dfOHLCV[:Date], indic[:LowerBand],
+)
+=#
+
+pause(10)
 
 #angles = readdlm("test/angles.csv")
 #angles = reshape(angles, length(angles))  # convert Array{Float64,2} to Array{Float64,1}

@@ -5,6 +5,8 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
 
 =#
 
+const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
+
 @enum(TA_RetCode, 
     TA_SUCCESS = 0,
     TA_LIB_NOT_INITIALIZE = 1,
