@@ -44,3 +44,17 @@ function cleanup_prefix(s)
         end
     end
 end
+
+"""
+    varname(s)
+
+# Examples
+```julia
+julia> varname("Time Period")
+time_period
+```
+
+"""
+function varname(s)
+    replace(lowercase(s), " ", "_")
+end

@@ -2,9 +2,10 @@ module TALib
 
 
 to_export = [:GetVersionString, :GetVersionMajor, :GetVersionMinor, :GetVersionBuild,
+    :FunctionDescriptionXML,
     :GetVersionDate, :GetVersionTime,
     :Initialize, :Shutdown,
-    :COS, :SIN, :ACOS, :ASIN, :TAN, :ATAN,
+    :COS, :SIN, :ACOS, :ASIN, :TAN, :ATAN, 
     :MA, :BBANDS
 ]
 
@@ -47,7 +48,7 @@ function GetVersionString()
 end
 =#
 
-for f in [:GetVersionString, :GetVersionMajor, :GetVersionMinor, :GetVersionBuild, :GetVersionDate, :GetVersionTime]
+for f in [:GetVersionString, :GetVersionMajor, :GetVersionMinor, :GetVersionBuild, :GetVersionDate, :GetVersionTime, :FunctionDescriptionXML]
     f_str = string(f)
     f_ta_str = "TA_" * f_str
     @eval begin

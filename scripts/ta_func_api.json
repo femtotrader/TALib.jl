@@ -1,0 +1,6546 @@
+{
+  "FinancialFunctions": {
+    "FinancialFunction": [
+      {
+        "Abbreviation": "ACOS", 
+        "CamelCaseName": "Acos", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric ACos"
+      }, 
+      {
+        "Abbreviation": "AD", 
+        "CamelCaseName": "Ad", 
+        "GroupId": "Volume Indicators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }, 
+            {
+              "Name": "Volume", 
+              "Type": "Volume"
+            }
+          ]
+        }, 
+        "ShortDescription": "Chaikin A/D Line"
+      }, 
+      {
+        "Abbreviation": "ADD", 
+        "CamelCaseName": "Add", 
+        "GroupId": "Math Operators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal0", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "inReal1", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "ShortDescription": "Vector Arithmetic Add"
+      }, 
+      {
+        "Abbreviation": "ADOSC", 
+        "CamelCaseName": "AdOsc", 
+        "GroupId": "Volume Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "3", 
+              "Name": "Fast Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the fast MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "10", 
+              "Name": "Slow Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the slow MA", 
+              "Type": "Integer"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }, 
+            {
+              "Name": "Volume", 
+              "Type": "Volume"
+            }
+          ]
+        }, 
+        "ShortDescription": "Chaikin A/D Oscillator"
+      }, 
+      {
+        "Abbreviation": "ADX", 
+        "CamelCaseName": "Adx", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Average Directional Movement Index"
+      }, 
+      {
+        "Abbreviation": "ADXR", 
+        "CamelCaseName": "Adxr", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Average Directional Movement Index Rating"
+      }, 
+      {
+        "Abbreviation": "APO", 
+        "CamelCaseName": "Apo", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "12", 
+              "Name": "Fast Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the fast MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "26", 
+              "Name": "Slow Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the slow MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "MA Type", 
+              "ShortDescription": "Type of Moving Average", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Absolute Price Oscillator"
+      }, 
+      {
+        "Abbreviation": "AROON", 
+        "CamelCaseName": "Aroon", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outAroonDown", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outAroonUp", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Aroon"
+      }, 
+      {
+        "Abbreviation": "AROONOSC", 
+        "CamelCaseName": "AroonOsc", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Aroon Oscillator"
+      }, 
+      {
+        "Abbreviation": "ASIN", 
+        "CamelCaseName": "Asin", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric ASin"
+      }, 
+      {
+        "Abbreviation": "ATAN", 
+        "CamelCaseName": "Atan", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric ATan"
+      }, 
+      {
+        "Abbreviation": "ATR", 
+        "CamelCaseName": "Atr", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Volatility Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Average True Range"
+      }, 
+      {
+        "Abbreviation": "AVGPRICE", 
+        "CamelCaseName": "AvgPrice", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Price Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Average Price"
+      }, 
+      {
+        "Abbreviation": "BBANDS", 
+        "CamelCaseName": "Bbands", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "5", 
+              "Name": "Time Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "2.000000e+0", 
+              "Name": "Deviations up", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "-3.000000e+37", 
+                "Precision": "2", 
+                "SuggestedEnd": "2.000000e+0", 
+                "SuggestedIncrement": "2.000000e-1", 
+                "SuggestedStart": "-2.000000e+0"
+              }, 
+              "ShortDescription": "Deviation multiplier for upper band", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e+0", 
+              "Name": "Deviations down", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "-3.000000e+37", 
+                "Precision": "2", 
+                "SuggestedEnd": "2.000000e+0", 
+                "SuggestedIncrement": "2.000000e-1", 
+                "SuggestedStart": "-2.000000e+0"
+              }, 
+              "ShortDescription": "Deviation multiplier for lower band", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "MA Type", 
+              "ShortDescription": "Type of Moving Average", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Upper Limit"
+              }, 
+              "Name": "outRealUpperBand", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outRealMiddleBand", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Lower Limit"
+              }, 
+              "Name": "outRealLowerBand", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Bollinger Bands"
+      }, 
+      {
+        "Abbreviation": "BETA", 
+        "CamelCaseName": "Beta", 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "5", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal0", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "inReal1", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "ShortDescription": "Beta"
+      }, 
+      {
+        "Abbreviation": "BOP", 
+        "CamelCaseName": "Bop", 
+        "GroupId": "Momentum Indicators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Balance Of Power"
+      }, 
+      {
+        "Abbreviation": "CCI", 
+        "CamelCaseName": "Cci", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Commodity Channel Index"
+      }, 
+      {
+        "Abbreviation": "CDL2CROWS", 
+        "CamelCaseName": "Cdl2Crows", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Two Crows"
+      }, 
+      {
+        "Abbreviation": "CDL3BLACKCROWS", 
+        "CamelCaseName": "Cdl3BlackCrows", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Three Black Crows"
+      }, 
+      {
+        "Abbreviation": "CDL3INSIDE", 
+        "CamelCaseName": "Cdl3Inside", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Three Inside Up/Down"
+      }, 
+      {
+        "Abbreviation": "CDL3LINESTRIKE", 
+        "CamelCaseName": "Cdl3LineStrike", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Three-Line Strike "
+      }, 
+      {
+        "Abbreviation": "CDL3OUTSIDE", 
+        "CamelCaseName": "Cdl3Outside", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Three Outside Up/Down"
+      }, 
+      {
+        "Abbreviation": "CDL3STARSINSOUTH", 
+        "CamelCaseName": "Cdl3StarsInSouth", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Three Stars In The South"
+      }, 
+      {
+        "Abbreviation": "CDL3WHITESOLDIERS", 
+        "CamelCaseName": "Cdl3WhiteSoldiers", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Three Advancing White Soldiers"
+      }, 
+      {
+        "Abbreviation": "CDLABANDONEDBABY", 
+        "CamelCaseName": "CdlAbandonedBaby", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "3.000000e-1", 
+            "Name": "Penetration", 
+            "Range": {
+              "Maximum": "3.000000e+37", 
+              "Minimum": "0.000000e+0", 
+              "Precision": "0", 
+              "SuggestedEnd": "0.000000e+0", 
+              "SuggestedIncrement": "0.000000e+0", 
+              "SuggestedStart": "0.000000e+0"
+            }, 
+            "ShortDescription": "Percentage of penetration of a candle within another candle", 
+            "Type": "Double"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Abandoned Baby"
+      }, 
+      {
+        "Abbreviation": "CDLADVANCEBLOCK", 
+        "CamelCaseName": "CdlAdvanceBlock", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Advance Block"
+      }, 
+      {
+        "Abbreviation": "CDLBELTHOLD", 
+        "CamelCaseName": "CdlBeltHold", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Belt-hold"
+      }, 
+      {
+        "Abbreviation": "CDLBREAKAWAY", 
+        "CamelCaseName": "CdlBreakaway", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Breakaway"
+      }, 
+      {
+        "Abbreviation": "CDLCLOSINGMARUBOZU", 
+        "CamelCaseName": "CdlClosingMarubozu", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Closing Marubozu"
+      }, 
+      {
+        "Abbreviation": "CDLCONCEALBABYSWALL", 
+        "CamelCaseName": "CdlConcealBabysWall", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Concealing Baby Swallow"
+      }, 
+      {
+        "Abbreviation": "CDLCOUNTERATTACK", 
+        "CamelCaseName": "CdlCounterAttack", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Counterattack"
+      }, 
+      {
+        "Abbreviation": "CDLDARKCLOUDCOVER", 
+        "CamelCaseName": "CdlDarkCloudCover", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "5.000000e-1", 
+            "Name": "Penetration", 
+            "Range": {
+              "Maximum": "3.000000e+37", 
+              "Minimum": "0.000000e+0", 
+              "Precision": "0", 
+              "SuggestedEnd": "0.000000e+0", 
+              "SuggestedIncrement": "0.000000e+0", 
+              "SuggestedStart": "0.000000e+0"
+            }, 
+            "ShortDescription": "Percentage of penetration of a candle within another candle", 
+            "Type": "Double"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Dark Cloud Cover"
+      }, 
+      {
+        "Abbreviation": "CDLDOJI", 
+        "CamelCaseName": "CdlDoji", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Doji"
+      }, 
+      {
+        "Abbreviation": "CDLDOJISTAR", 
+        "CamelCaseName": "CdlDojiStar", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Doji Star"
+      }, 
+      {
+        "Abbreviation": "CDLDRAGONFLYDOJI", 
+        "CamelCaseName": "CdlDragonflyDoji", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Dragonfly Doji"
+      }, 
+      {
+        "Abbreviation": "CDLENGULFING", 
+        "CamelCaseName": "CdlEngulfing", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Engulfing Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLEVENINGDOJISTAR", 
+        "CamelCaseName": "CdlEveningDojiStar", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "3.000000e-1", 
+            "Name": "Penetration", 
+            "Range": {
+              "Maximum": "3.000000e+37", 
+              "Minimum": "0.000000e+0", 
+              "Precision": "0", 
+              "SuggestedEnd": "0.000000e+0", 
+              "SuggestedIncrement": "0.000000e+0", 
+              "SuggestedStart": "0.000000e+0"
+            }, 
+            "ShortDescription": "Percentage of penetration of a candle within another candle", 
+            "Type": "Double"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Evening Doji Star"
+      }, 
+      {
+        "Abbreviation": "CDLEVENINGSTAR", 
+        "CamelCaseName": "CdlEveningStar", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "3.000000e-1", 
+            "Name": "Penetration", 
+            "Range": {
+              "Maximum": "3.000000e+37", 
+              "Minimum": "0.000000e+0", 
+              "Precision": "0", 
+              "SuggestedEnd": "0.000000e+0", 
+              "SuggestedIncrement": "0.000000e+0", 
+              "SuggestedStart": "0.000000e+0"
+            }, 
+            "ShortDescription": "Percentage of penetration of a candle within another candle", 
+            "Type": "Double"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Evening Star"
+      }, 
+      {
+        "Abbreviation": "CDLGAPSIDESIDEWHITE", 
+        "CamelCaseName": "CdlGapSideSideWhite", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Up/Down-gap side-by-side white lines"
+      }, 
+      {
+        "Abbreviation": "CDLGRAVESTONEDOJI", 
+        "CamelCaseName": "CdlGravestoneDoji", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Gravestone Doji"
+      }, 
+      {
+        "Abbreviation": "CDLHAMMER", 
+        "CamelCaseName": "CdlHammer", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Hammer"
+      }, 
+      {
+        "Abbreviation": "CDLHANGINGMAN", 
+        "CamelCaseName": "CdlHangingMan", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Hanging Man"
+      }, 
+      {
+        "Abbreviation": "CDLHARAMI", 
+        "CamelCaseName": "CdlHarami", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Harami Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLHARAMICROSS", 
+        "CamelCaseName": "CdlHaramiCross", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Harami Cross Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLHIGHWAVE", 
+        "CamelCaseName": "CdlHignWave", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "High-Wave Candle"
+      }, 
+      {
+        "Abbreviation": "CDLHIKKAKE", 
+        "CamelCaseName": "CdlHikkake", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Hikkake Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLHIKKAKEMOD", 
+        "CamelCaseName": "CdlHikkakeMod", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Modified Hikkake Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLHOMINGPIGEON", 
+        "CamelCaseName": "CdlHomingPigeon", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Homing Pigeon"
+      }, 
+      {
+        "Abbreviation": "CDLIDENTICAL3CROWS", 
+        "CamelCaseName": "CdlIdentical3Crows", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Identical Three Crows"
+      }, 
+      {
+        "Abbreviation": "CDLINNECK", 
+        "CamelCaseName": "CdlInNeck", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "In-Neck Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLINVERTEDHAMMER", 
+        "CamelCaseName": "CdlInvertedHammer", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Inverted Hammer"
+      }, 
+      {
+        "Abbreviation": "CDLKICKING", 
+        "CamelCaseName": "CdlKicking", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Kicking"
+      }, 
+      {
+        "Abbreviation": "CDLKICKINGBYLENGTH", 
+        "CamelCaseName": "CdlKickingByLength", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Kicking - bull/bear determined by the longer marubozu"
+      }, 
+      {
+        "Abbreviation": "CDLLADDERBOTTOM", 
+        "CamelCaseName": "CdlLadderBottom", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Ladder Bottom"
+      }, 
+      {
+        "Abbreviation": "CDLLONGLEGGEDDOJI", 
+        "CamelCaseName": "CdlLongLeggedDoji", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Long Legged Doji"
+      }, 
+      {
+        "Abbreviation": "CDLLONGLINE", 
+        "CamelCaseName": "CdlLongLine", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Long Line Candle"
+      }, 
+      {
+        "Abbreviation": "CDLMARUBOZU", 
+        "CamelCaseName": "CdlMarubozu", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Marubozu"
+      }, 
+      {
+        "Abbreviation": "CDLMATCHINGLOW", 
+        "CamelCaseName": "CdlMatchingLow", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Matching Low"
+      }, 
+      {
+        "Abbreviation": "CDLMATHOLD", 
+        "CamelCaseName": "CdlMatHold", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "5.000000e-1", 
+            "Name": "Penetration", 
+            "Range": {
+              "Maximum": "3.000000e+37", 
+              "Minimum": "0.000000e+0", 
+              "Precision": "0", 
+              "SuggestedEnd": "0.000000e+0", 
+              "SuggestedIncrement": "0.000000e+0", 
+              "SuggestedStart": "0.000000e+0"
+            }, 
+            "ShortDescription": "Percentage of penetration of a candle within another candle", 
+            "Type": "Double"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Mat Hold"
+      }, 
+      {
+        "Abbreviation": "CDLMORNINGDOJISTAR", 
+        "CamelCaseName": "CdlMorningDojiStar", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "3.000000e-1", 
+            "Name": "Penetration", 
+            "Range": {
+              "Maximum": "3.000000e+37", 
+              "Minimum": "0.000000e+0", 
+              "Precision": "0", 
+              "SuggestedEnd": "0.000000e+0", 
+              "SuggestedIncrement": "0.000000e+0", 
+              "SuggestedStart": "0.000000e+0"
+            }, 
+            "ShortDescription": "Percentage of penetration of a candle within another candle", 
+            "Type": "Double"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Morning Doji Star"
+      }, 
+      {
+        "Abbreviation": "CDLMORNINGSTAR", 
+        "CamelCaseName": "CdlMorningStar", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "3.000000e-1", 
+            "Name": "Penetration", 
+            "Range": {
+              "Maximum": "3.000000e+37", 
+              "Minimum": "0.000000e+0", 
+              "Precision": "0", 
+              "SuggestedEnd": "0.000000e+0", 
+              "SuggestedIncrement": "0.000000e+0", 
+              "SuggestedStart": "0.000000e+0"
+            }, 
+            "ShortDescription": "Percentage of penetration of a candle within another candle", 
+            "Type": "Double"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Morning Star"
+      }, 
+      {
+        "Abbreviation": "CDLONNECK", 
+        "CamelCaseName": "CdlOnNeck", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "On-Neck Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLPIERCING", 
+        "CamelCaseName": "CdlPiercing", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Piercing Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLRICKSHAWMAN", 
+        "CamelCaseName": "CdlRickshawMan", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Rickshaw Man"
+      }, 
+      {
+        "Abbreviation": "CDLRISEFALL3METHODS", 
+        "CamelCaseName": "CdlRiseFall3Methods", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Rising/Falling Three Methods"
+      }, 
+      {
+        "Abbreviation": "CDLSEPARATINGLINES", 
+        "CamelCaseName": "CdlSeperatingLines", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Separating Lines"
+      }, 
+      {
+        "Abbreviation": "CDLSHOOTINGSTAR", 
+        "CamelCaseName": "CdlShootingStar", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Shooting Star"
+      }, 
+      {
+        "Abbreviation": "CDLSHORTLINE", 
+        "CamelCaseName": "CdlShortLine", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Short Line Candle"
+      }, 
+      {
+        "Abbreviation": "CDLSPINNINGTOP", 
+        "CamelCaseName": "CdlSpinningTop", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Spinning Top"
+      }, 
+      {
+        "Abbreviation": "CDLSTALLEDPATTERN", 
+        "CamelCaseName": "CdlStalledPattern", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Stalled Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLSTICKSANDWICH", 
+        "CamelCaseName": "CdlStickSandwhich", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Stick Sandwich"
+      }, 
+      {
+        "Abbreviation": "CDLTAKURI", 
+        "CamelCaseName": "CdlTakuri", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Takuri (Dragonfly Doji with very long lower shadow)"
+      }, 
+      {
+        "Abbreviation": "CDLTASUKIGAP", 
+        "CamelCaseName": "CdlTasukiGap", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Tasuki Gap"
+      }, 
+      {
+        "Abbreviation": "CDLTHRUSTING", 
+        "CamelCaseName": "CdlThrusting", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Thrusting Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLTRISTAR", 
+        "CamelCaseName": "CdlTristar", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Tristar Pattern"
+      }, 
+      {
+        "Abbreviation": "CDLUNIQUE3RIVER", 
+        "CamelCaseName": "CdlUnique3River", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Unique 3 River"
+      }, 
+      {
+        "Abbreviation": "CDLUPSIDEGAP2CROWS", 
+        "CamelCaseName": "CdlUpsideGap2Crows", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Upside Gap Two Crows"
+      }, 
+      {
+        "Abbreviation": "CDLXSIDEGAP3METHODS", 
+        "CamelCaseName": "CdlXSideGap3Methods", 
+        "Flags": {
+          "Flag": "Candlestick"
+        }, 
+        "GroupId": "Pattern Recognition", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "Open", 
+              "Type": "Open"
+            }, 
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Upside/Downside Gap Three Methods"
+      }, 
+      {
+        "Abbreviation": "CEIL", 
+        "CamelCaseName": "Ceil", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Ceil"
+      }, 
+      {
+        "Abbreviation": "CMO", 
+        "CamelCaseName": "Cmo", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Chande Momentum Oscillator"
+      }, 
+      {
+        "Abbreviation": "CORREL", 
+        "CamelCaseName": "Correl", 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal0", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "inReal1", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "ShortDescription": "Pearson's Correlation Coefficient (r)"
+      }, 
+      {
+        "Abbreviation": "COS", 
+        "CamelCaseName": "Cos", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric Cos"
+      }, 
+      {
+        "Abbreviation": "COSH", 
+        "CamelCaseName": "Cosh", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric Cosh"
+      }, 
+      {
+        "Abbreviation": "DEMA", 
+        "CamelCaseName": "Dema", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Double Exponential Moving Average"
+      }, 
+      {
+        "Abbreviation": "DIV", 
+        "CamelCaseName": "Div", 
+        "GroupId": "Math Operators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal0", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "inReal1", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "ShortDescription": "Vector Arithmetic Div"
+      }, 
+      {
+        "Abbreviation": "DX", 
+        "CamelCaseName": "Dx", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Directional Movement Index"
+      }, 
+      {
+        "Abbreviation": "EMA", 
+        "CamelCaseName": "Ema", 
+        "Flags": {
+          "Flag": [
+            "Overlap", 
+            "Unstable Period"
+          ]
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Exponential Moving Average"
+      }, 
+      {
+        "Abbreviation": "EXP", 
+        "CamelCaseName": "Exp", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Arithmetic Exp"
+      }, 
+      {
+        "Abbreviation": "FLOOR", 
+        "CamelCaseName": "Floor", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Floor"
+      }, 
+      {
+        "Abbreviation": "HT_DCPERIOD", 
+        "CamelCaseName": "HtDcPeriod", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Cycle Indicators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Hilbert Transform - Dominant Cycle Period"
+      }, 
+      {
+        "Abbreviation": "HT_DCPHASE", 
+        "CamelCaseName": "HtDcPhase", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Cycle Indicators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Hilbert Transform - Dominant Cycle Phase"
+      }, 
+      {
+        "Abbreviation": "HT_PHASOR", 
+        "CamelCaseName": "HtPhasor", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Cycle Indicators", 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outInPhase", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outQuadrature", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Hilbert Transform - Phasor Components"
+      }, 
+      {
+        "Abbreviation": "HT_SINE", 
+        "CamelCaseName": "HtSine", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Cycle Indicators", 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outSine", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outLeadSine", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Hilbert Transform - SineWave"
+      }, 
+      {
+        "Abbreviation": "HT_TRENDLINE", 
+        "CamelCaseName": "HtTrendline", 
+        "Flags": {
+          "Flag": [
+            "Overlap", 
+            "Unstable Period"
+          ]
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Hilbert Transform - Instantaneous Trendline"
+      }, 
+      {
+        "Abbreviation": "HT_TRENDMODE", 
+        "CamelCaseName": "HtTrendMode", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Cycle Indicators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Hilbert Transform - Trend vs Cycle Mode"
+      }, 
+      {
+        "Abbreviation": "KAMA", 
+        "CamelCaseName": "Kama", 
+        "Flags": {
+          "Flag": [
+            "Overlap", 
+            "Unstable Period"
+          ]
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Kaufman Adaptive Moving Average"
+      }, 
+      {
+        "Abbreviation": "LINEARREG", 
+        "CamelCaseName": "LinearReg", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Linear Regression"
+      }, 
+      {
+        "Abbreviation": "LINEARREG_ANGLE", 
+        "CamelCaseName": "LinearRegAngle", 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Linear Regression Angle"
+      }, 
+      {
+        "Abbreviation": "LINEARREG_INTERCEPT", 
+        "CamelCaseName": "LinearRegIntercept", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Linear Regression Intercept"
+      }, 
+      {
+        "Abbreviation": "LINEARREG_SLOPE", 
+        "CamelCaseName": "LinearRegSlope", 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Linear Regression Slope"
+      }, 
+      {
+        "Abbreviation": "LN", 
+        "CamelCaseName": "Ln", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Log Natural"
+      }, 
+      {
+        "Abbreviation": "LOG10", 
+        "CamelCaseName": "Log10", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Log10"
+      }, 
+      {
+        "Abbreviation": "MA", 
+        "CamelCaseName": "MovingAverage", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "30", 
+              "Name": "Time Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "MA Type", 
+              "ShortDescription": "Type of Moving Average", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Moving average"
+      }, 
+      {
+        "Abbreviation": "MACD", 
+        "CamelCaseName": "Macd", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "12", 
+              "Name": "Fast Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the fast MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "26", 
+              "Name": "Slow Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the slow MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "9", 
+              "Name": "Signal Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Smoothing for the signal line (nb of period)", 
+              "Type": "Integer"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMACD", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outMACDSignal", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Histogram"
+              }, 
+              "Name": "outMACDHist", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Moving Average Convergence/Divergence"
+      }, 
+      {
+        "Abbreviation": "MACDEXT", 
+        "CamelCaseName": "MacdExt", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "12", 
+              "Name": "Fast Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the fast MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "Fast MA", 
+              "ShortDescription": "Type of Moving Average for fast MA", 
+              "Type": "MA Type"
+            }, 
+            {
+              "DefaultValue": "26", 
+              "Name": "Slow Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the slow MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "Slow MA", 
+              "ShortDescription": "Type of Moving Average for slow MA", 
+              "Type": "MA Type"
+            }, 
+            {
+              "DefaultValue": "9", 
+              "Name": "Signal Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Smoothing for the signal line (nb of period)", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "Signal MA", 
+              "ShortDescription": "Type of Moving Average for signal line", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMACD", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outMACDSignal", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Histogram"
+              }, 
+              "Name": "outMACDHist", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "MACD with controllable MA type"
+      }, 
+      {
+        "Abbreviation": "MACDFIX", 
+        "CamelCaseName": "MacdFix", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "9", 
+            "Name": "Signal Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Smoothing for the signal line (nb of period)", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMACD", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outMACDSignal", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Histogram"
+              }, 
+              "Name": "outMACDHist", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Moving Average Convergence/Divergence Fix 12/26"
+      }, 
+      {
+        "Abbreviation": "MAMA", 
+        "CamelCaseName": "Mama", 
+        "Flags": {
+          "Flag": [
+            "Overlap", 
+            "Unstable Period"
+          ]
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "5.000000e-1", 
+              "Name": "Fast Limit", 
+              "Range": {
+                "Maximum": "9.900000e-1", 
+                "Minimum": "1.000000e-2", 
+                "Precision": "2", 
+                "SuggestedEnd": "8.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "2.100000e-1"
+              }, 
+              "ShortDescription": "Upper limit use in the adaptive algorithm", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "5.000000e-2", 
+              "Name": "Slow Limit", 
+              "Range": {
+                "Maximum": "9.900000e-1", 
+                "Minimum": "1.000000e-2", 
+                "Precision": "2", 
+                "SuggestedEnd": "6.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Lower limit use in the adaptive algorithm", 
+              "Type": "Double"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMAMA", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outFAMA", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "MESA Adaptive Moving Average"
+      }, 
+      {
+        "Abbreviation": "MAVP", 
+        "CamelCaseName": "MovingAverageVariablePeriod", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "2", 
+              "Name": "Minimum Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Value less than minimum will be changed to Minimum period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "30", 
+              "Name": "Maximum Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Value higher than maximum will be changed to Maximum period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "MA Type", 
+              "ShortDescription": "Type of Moving Average", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "inPeriods", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "ShortDescription": "Moving average with variable period"
+      }, 
+      {
+        "Abbreviation": "MAX", 
+        "CamelCaseName": "Max", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Math Operators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Highest value over a specified period"
+      }, 
+      {
+        "Abbreviation": "MAXINDEX", 
+        "CamelCaseName": "MaxIndex", 
+        "GroupId": "Math Operators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Index of highest value over a specified period"
+      }, 
+      {
+        "Abbreviation": "MEDPRICE", 
+        "CamelCaseName": "MedPrice", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Price Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Median Price"
+      }, 
+      {
+        "Abbreviation": "MFI", 
+        "CamelCaseName": "Mfi", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }, 
+            {
+              "Name": "Volume", 
+              "Type": "Volume"
+            }
+          ]
+        }, 
+        "ShortDescription": "Money Flow Index"
+      }, 
+      {
+        "Abbreviation": "MIDPOINT", 
+        "CamelCaseName": "MidPoint", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "MidPoint over period"
+      }, 
+      {
+        "Abbreviation": "MIDPRICE", 
+        "CamelCaseName": "MidPrice", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Midpoint Price over period"
+      }, 
+      {
+        "Abbreviation": "MIN", 
+        "CamelCaseName": "Min", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Math Operators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Lowest value over a specified period"
+      }, 
+      {
+        "Abbreviation": "MININDEX", 
+        "CamelCaseName": "MinIndex", 
+        "GroupId": "Math Operators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outInteger", 
+            "Type": "Integer Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Index of lowest value over a specified period"
+      }, 
+      {
+        "Abbreviation": "MINMAX", 
+        "CamelCaseName": "MinMax", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Math Operators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMin", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMax", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Lowest and highest values over a specified period"
+      }, 
+      {
+        "Abbreviation": "MINMAXINDEX", 
+        "CamelCaseName": "MinMaxIndex", 
+        "GroupId": "Math Operators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMinIdx", 
+              "Type": "Integer Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outMaxIdx", 
+              "Type": "Integer Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Indexes of lowest and highest values over a specified period"
+      }, 
+      {
+        "Abbreviation": "MINUS_DI", 
+        "CamelCaseName": "MinusDI", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Minus Directional Indicator"
+      }, 
+      {
+        "Abbreviation": "MINUS_DM", 
+        "CamelCaseName": "MinusDM", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Minus Directional Movement"
+      }, 
+      {
+        "Abbreviation": "MOM", 
+        "CamelCaseName": "Mom", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "10", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Momentum"
+      }, 
+      {
+        "Abbreviation": "MULT", 
+        "CamelCaseName": "Mult", 
+        "GroupId": "Math Operators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal0", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "inReal1", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "ShortDescription": "Vector Arithmetic Mult"
+      }, 
+      {
+        "Abbreviation": "NATR", 
+        "CamelCaseName": "Natr", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Volatility Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Normalized Average True Range"
+      }, 
+      {
+        "Abbreviation": "OBV", 
+        "CamelCaseName": "Obv", 
+        "GroupId": "Volume Indicators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "Volume", 
+              "Type": "Volume"
+            }
+          ]
+        }, 
+        "ShortDescription": "On Balance Volume"
+      }, 
+      {
+        "Abbreviation": "PLUS_DI", 
+        "CamelCaseName": "PlusDI", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Plus Directional Indicator"
+      }, 
+      {
+        "Abbreviation": "PLUS_DM", 
+        "CamelCaseName": "PlusDM", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Plus Directional Movement"
+      }, 
+      {
+        "Abbreviation": "PPO", 
+        "CamelCaseName": "Ppo", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "12", 
+              "Name": "Fast Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the fast MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "26", 
+              "Name": "Slow Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period for the slow MA", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "MA Type", 
+              "ShortDescription": "Type of Moving Average", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Percentage Price Oscillator"
+      }, 
+      {
+        "Abbreviation": "ROC", 
+        "CamelCaseName": "Roc", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "10", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Rate of change : ((price/prevPrice)-1)*100"
+      }, 
+      {
+        "Abbreviation": "ROCP", 
+        "CamelCaseName": "RocP", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "10", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Rate of change Percentage: (price-prevPrice)/prevPrice"
+      }, 
+      {
+        "Abbreviation": "ROCR", 
+        "CamelCaseName": "RocR", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "10", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Rate of change ratio: (price/prevPrice)"
+      }, 
+      {
+        "Abbreviation": "ROCR100", 
+        "CamelCaseName": "RocR100", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "10", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Rate of change ratio 100 scale: (price/prevPrice)*100"
+      }, 
+      {
+        "Abbreviation": "RSI", 
+        "CamelCaseName": "Rsi", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Relative Strength Index"
+      }, 
+      {
+        "Abbreviation": "SAR", 
+        "CamelCaseName": "Sar", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "2.000000e-2", 
+              "Name": "Acceleration Factor", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "2.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Acceleration Factor used up to the Maximum value", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e-1", 
+              "Name": "AF Maximum", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "4.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "2.000000e-1"
+              }, 
+              "ShortDescription": "Acceleration Factor Maximum value", 
+              "Type": "Double"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Parabolic SAR"
+      }, 
+      {
+        "Abbreviation": "SAREXT", 
+        "CamelCaseName": "SarExt", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "0.000000e+0", 
+              "Name": "Start Value", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "-3.000000e+37", 
+                "Precision": "4", 
+                "SuggestedEnd": "0.000000e+0", 
+                "SuggestedIncrement": "0.000000e+0", 
+                "SuggestedStart": "0.000000e+0"
+              }, 
+              "ShortDescription": "Start value and direction. 0 for Auto, >0 for Long, <0 for Short", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "0.000000e+0", 
+              "Name": "Offset on Reverse", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "1.500000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Percent offset added/removed to initial stop on short/long reversal", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e-2", 
+              "Name": "AF Init Long", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "1.900000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Acceleration Factor initial value for the Long direction", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e-2", 
+              "Name": "AF Long", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "2.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Acceleration Factor for the Long direction", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e-1", 
+              "Name": "AF Max Long", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "4.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "2.000000e-1"
+              }, 
+              "ShortDescription": "Acceleration Factor maximum value for the Long direction", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e-2", 
+              "Name": "AF Init Short", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "1.900000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Acceleration Factor initial value for the Short direction", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e-2", 
+              "Name": "AF Short", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "2.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Acceleration Factor for the Short direction", 
+              "Type": "Double"
+            }, 
+            {
+              "DefaultValue": "2.000000e-1", 
+              "Name": "AF Max Short", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "4", 
+                "SuggestedEnd": "4.000000e-1", 
+                "SuggestedIncrement": "1.000000e-2", 
+                "SuggestedStart": "2.000000e-1"
+              }, 
+              "ShortDescription": "Acceleration Factor maximum value for the Short direction", 
+              "Type": "Double"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }
+          ]
+        }, 
+        "ShortDescription": "Parabolic SAR - Extended"
+      }, 
+      {
+        "Abbreviation": "SIN", 
+        "CamelCaseName": "Sin", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric Sin"
+      }, 
+      {
+        "Abbreviation": "SINH", 
+        "CamelCaseName": "Sinh", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric Sinh"
+      }, 
+      {
+        "Abbreviation": "SMA", 
+        "CamelCaseName": "Sma", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Simple Moving Average"
+      }, 
+      {
+        "Abbreviation": "SQRT", 
+        "CamelCaseName": "Sqrt", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Square Root"
+      }, 
+      {
+        "Abbreviation": "STDDEV", 
+        "CamelCaseName": "StdDev", 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "5", 
+              "Name": "Time Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "1.000000e+0", 
+              "Name": "Deviations", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "-3.000000e+37", 
+                "Precision": "2", 
+                "SuggestedEnd": "2.000000e+0", 
+                "SuggestedIncrement": "2.000000e-1", 
+                "SuggestedStart": "-2.000000e+0"
+              }, 
+              "ShortDescription": "Nb of deviations", 
+              "Type": "Double"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Standard Deviation"
+      }, 
+      {
+        "Abbreviation": "STOCH", 
+        "CamelCaseName": "Stoch", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "5", 
+              "Name": "Fast-K Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Time period for building the Fast-K line", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "3", 
+              "Name": "Slow-K Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Smoothing for making the Slow-K line. Usually set to 3", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "Slow-K MA", 
+              "ShortDescription": "Type of Moving Average for Slow-K", 
+              "Type": "MA Type"
+            }, 
+            {
+              "DefaultValue": "3", 
+              "Name": "Slow-D Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Smoothing for making the Slow-D line", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "Slow-D MA", 
+              "ShortDescription": "Type of Moving Average for Slow-D", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outSlowK", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Dashed Line"
+              }, 
+              "Name": "outSlowD", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Stochastic"
+      }, 
+      {
+        "Abbreviation": "STOCHF", 
+        "CamelCaseName": "StochF", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "5", 
+              "Name": "Fast-K Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Time period for building the Fast-K line", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "3", 
+              "Name": "Fast-D Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Smoothing for making the Fast-D line. Usually set to 3", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "Fast-D MA", 
+              "ShortDescription": "Type of Moving Average for Fast-D", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outFastK", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outFastD", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Stochastic Fast"
+      }, 
+      {
+        "Abbreviation": "STOCHRSI", 
+        "CamelCaseName": "StochRsi", 
+        "Flags": {
+          "Flag": "Unstable Period"
+        }, 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "14", 
+              "Name": "Time Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "5", 
+              "Name": "Fast-K Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Time period for building the Fast-K line", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "3", 
+              "Name": "Fast-D Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Smoothing for making the Fast-D line. Usually set to 3", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "0", 
+              "Name": "Fast-D MA", 
+              "ShortDescription": "Type of Moving Average for Fast-D", 
+              "Type": "MA Type"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": [
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outFastK", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Flags": {
+                "Flag": "Line"
+              }, 
+              "Name": "outFastD", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Stochastic Relative Strength Index"
+      }, 
+      {
+        "Abbreviation": "SUB", 
+        "CamelCaseName": "Sub", 
+        "GroupId": "Math Operators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "inReal0", 
+              "Type": "Double Array"
+            }, 
+            {
+              "Name": "inReal1", 
+              "Type": "Double Array"
+            }
+          ]
+        }, 
+        "ShortDescription": "Vector Arithmetic Substraction"
+      }, 
+      {
+        "Abbreviation": "SUM", 
+        "CamelCaseName": "Sum", 
+        "GroupId": "Math Operators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Summation"
+      }, 
+      {
+        "Abbreviation": "T3", 
+        "CamelCaseName": "T3", 
+        "Flags": {
+          "Flag": [
+            "Overlap", 
+            "Unstable Period"
+          ]
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "5", 
+              "Name": "Time Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "2", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "7.000000e-1", 
+              "Name": "Volume Factor", 
+              "Range": {
+                "Maximum": "1.000000e+0", 
+                "Minimum": "0.000000e+0", 
+                "Precision": "2", 
+                "SuggestedEnd": "1.000000e+0", 
+                "SuggestedIncrement": "5.000000e-2", 
+                "SuggestedStart": "1.000000e-2"
+              }, 
+              "ShortDescription": "Volume Factor", 
+              "Type": "Double"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Triple Exponential Moving Average (T3)"
+      }, 
+      {
+        "Abbreviation": "TAN", 
+        "CamelCaseName": "Tan", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric Tan"
+      }, 
+      {
+        "Abbreviation": "TANH", 
+        "CamelCaseName": "Tanh", 
+        "GroupId": "Math Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Vector Trigonometric Tanh"
+      }, 
+      {
+        "Abbreviation": "TEMA", 
+        "CamelCaseName": "Tema", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Triple Exponential Moving Average"
+      }, 
+      {
+        "Abbreviation": "TRANGE", 
+        "CamelCaseName": "TrueRange", 
+        "GroupId": "Volatility Indicators", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "True Range"
+      }, 
+      {
+        "Abbreviation": "TRIMA", 
+        "CamelCaseName": "Trima", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Triangular Moving Average"
+      }, 
+      {
+        "Abbreviation": "TRIX", 
+        "CamelCaseName": "Trix", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "1", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "1-day Rate-Of-Change (ROC) of a Triple Smooth EMA"
+      }, 
+      {
+        "Abbreviation": "TSF", 
+        "CamelCaseName": "Tsf", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Time Series Forecast"
+      }, 
+      {
+        "Abbreviation": "TYPPRICE", 
+        "CamelCaseName": "TypPrice", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Price Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Typical Price"
+      }, 
+      {
+        "Abbreviation": "ULTOSC", 
+        "CamelCaseName": "UltOsc", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "7", 
+              "Name": "First Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of bars for 1st period.", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "14", 
+              "Name": "Second Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of bars fro 2nd period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "28", 
+              "Name": "Third Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of bars for 3rd period", 
+              "Type": "Integer"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Ultimate Oscillator"
+      }, 
+      {
+        "Abbreviation": "VAR", 
+        "CamelCaseName": "Variance", 
+        "GroupId": "Statistic Functions", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": [
+            {
+              "DefaultValue": "5", 
+              "Name": "Time Period", 
+              "Range": {
+                "Maximum": "100000", 
+                "Minimum": "1", 
+                "SuggestedEnd": "100000", 
+                "SuggestedIncrement": "100000", 
+                "SuggestedStart": "100000"
+              }, 
+              "ShortDescription": "Number of period", 
+              "Type": "Integer"
+            }, 
+            {
+              "DefaultValue": "1.000000e+0", 
+              "Name": "Deviations", 
+              "Range": {
+                "Maximum": "3.000000e+37", 
+                "Minimum": "-3.000000e+37", 
+                "Precision": "2", 
+                "SuggestedEnd": "2.000000e+0", 
+                "SuggestedIncrement": "2.000000e-1", 
+                "SuggestedStart": "-2.000000e+0"
+              }, 
+              "ShortDescription": "Nb of deviations", 
+              "Type": "Double"
+            }
+          ]
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Variance"
+      }, 
+      {
+        "Abbreviation": "WCLPRICE", 
+        "CamelCaseName": "WclPrice", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Price Transform", 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Weighted Close Price"
+      }, 
+      {
+        "Abbreviation": "WILLR", 
+        "CamelCaseName": "WillR", 
+        "GroupId": "Momentum Indicators", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "14", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": [
+            {
+              "Name": "High", 
+              "Type": "High"
+            }, 
+            {
+              "Name": "Low", 
+              "Type": "Low"
+            }, 
+            {
+              "Name": "Close", 
+              "Type": "Close"
+            }
+          ]
+        }, 
+        "ShortDescription": "Williams' %R"
+      }, 
+      {
+        "Abbreviation": "WMA", 
+        "CamelCaseName": "Wma", 
+        "Flags": {
+          "Flag": "Overlap"
+        }, 
+        "GroupId": "Overlap Studies", 
+        "OptionalInputArguments": {
+          "OptionalInputArgument": {
+            "DefaultValue": "30", 
+            "Name": "Time Period", 
+            "Range": {
+              "Maximum": "100000", 
+              "Minimum": "2", 
+              "SuggestedEnd": "100000", 
+              "SuggestedIncrement": "100000", 
+              "SuggestedStart": "100000"
+            }, 
+            "ShortDescription": "Number of period", 
+            "Type": "Integer"
+          }
+        }, 
+        "OutputArguments": {
+          "OutputArgument": {
+            "Flags": {
+              "Flag": "Line"
+            }, 
+            "Name": "outReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "RequiredInputArguments": {
+          "RequiredInputArgument": {
+            "Name": "inReal", 
+            "Type": "Double Array"
+          }
+        }, 
+        "ShortDescription": "Weighted Moving Average"
+      }
+    ]
+  }
+}

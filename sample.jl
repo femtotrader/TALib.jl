@@ -5,14 +5,16 @@ using TALib: TA_MAType_SMA
 
 using DataFrames
 
+print("Initialize: ")
+retCode = Initialize()
+println(retCode)
+
 for f in [GetVersionString, GetVersionMajor, GetVersionMinor, GetVersionBuild, GetVersionDate, GetVersionTime]
     print(string(f) * ": ")
     println(f())
 end
 
-print("Initialize: ")
-retCode = Initialize()
-println(retCode)
+println(FunctionDescriptionXML())
 
 println("Input")
 inReal = [0, pi/2, pi, 3pi/2, 0, pi/2, pi, 3pi/2]
