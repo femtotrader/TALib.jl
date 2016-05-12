@@ -1,29 +1,5 @@
 include("../src/TALib.jl")
-
-using TALib
-using LightXML
-
-s_xml = FunctionDescriptionXML()
-
-#println(s_xml)
-#println(typeof(s_xml))
-
-xdoc = parse_string(s_xml)
-
-# get the root element
-xroot = root(xdoc)
-
-println(name(xroot))  # this should print: bookstore
-
-# traverse all its child nodes and print element names
-for c in child_nodes(xroot)  # c is an instance of XMLNode
-    #println(c)
-    println(nodetype(c))
-    if is_elementnode(c)
-        e = XMLElement(c)  # this makes an XMLElement instance
-        println(name(e))
-    end
-end
+include("../src/tools.jl")
 
 using JSON
 using DataStructures
@@ -31,7 +7,7 @@ using DataStructures
 filename = "scripts/ta_func_api.json"
 lst_ta_func = JSON.parsefile(filename)["FinancialFunctions"]["FinancialFunction"]
 
-d_typ = Dict(
+d_typ_to_c = Dict(
    "Integer" => "Cint",
    "Double" => "Cdouble",
    "Integer Array" => "Ptr{Cint}",
@@ -49,7 +25,7 @@ d = OrderedDict{Symbol,Any}()
 for func_info = lst_ta_func
     funcname = func_info["Abbreviation"]
     delete!(func_info, "Abbreviation")
-    for key = ["RequiredInputArgument", "OutputArgument", "OptionalInputArgument"]
+    for key = ["RequiredInputArgument", "OptionalInputArgument", "OutputArgument"]
         if haskey(func_info, key * "s")
             if typeof(func_info[key * "s"][key]) == Dict{AbstractString,Any}
                 func_info[key * "s"] = [func_info[key * "s"][key]]  # list of only ONE element
@@ -60,7 +36,7 @@ for func_info = lst_ta_func
             func_info[key * "s"] = []
         end
         for arg = func_info[key * "s"]
-            if !haskey(d_typ, arg["Type"])
+            if !haskey(d_typ_to_c, arg["Type"])
                 error("$(arg["Type"]) is not a supported type")
             end
         end
@@ -68,42 +44,67 @@ for func_info = lst_ta_func
     d[symbol(funcname)] = func_info
 end
 
-f = open("new_ta_func_api.json", "w")
-JSON.print(f, d)
-close(f)
+"""
+    generate_ta_func_raw(d, symb)
 
+Generate function code (level 0)
 
+# Examples
+```julia
+julia> generate_ta_func_raw(d, :MAC)
+"..."
+```
+"""
+function generate_ta_func_raw(d, symb_func::Symbol)
+    func_info = d[symb_func]
 
-function proto(d, s_func::Symbol)
-    func_info = d[s_func]
-#d[s_func]["RequiredInputArguments"]["RequiredInputArgument"]["Type"]
-#d[s_func]["RequiredInputArguments"]["RequiredInputArgument"]["Name"]
-#d[s_func]["OutputArguments"]["OutputArgument"]
-#d[s_func]["OutputArguments"]["OutputArgument"]["Type"]
-#d[s_func]["OutputArguments"]["OutputArgument"]["Name"]
+    s_doc_Index = ""
+    s_doc_RequiredInputArguments = ""
+    s_doc_OptionalInputArguments = ""
+    s_doc_OutputArguments = ""
+    
+    params = ASCIIString[]
+    ctypes = ASCIIString[]
+    for arg = ["startIdx", "endIdx"]
+        varname = uncamel(arg)
+        typ = "Cint"
+        push!(params, varname)
+        push!(ctypes, typ)
+        s_doc_Index *= "\n        - " * arg * "::" * typ
+    end
 
-    params = "startIdx, endIdx"
-    ctypes = "Cint, Cint"
     for arg = func_info["RequiredInputArguments"]
-        params *= (", " * arg["Name"])
-        ctypes *= (", " * d_typ[arg["Type"]])
+        varname = replace_var(arg["Name"])
+        push!(params, varname)
+        push!(ctypes, d_typ_to_c[arg["Type"]])
+        s_doc_RequiredInputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
     end
+
     for arg = func_info["OptionalInputArguments"]
-        params *= (", " * varname(arg["Name"]))
-        ctypes *= (", " * d_typ[arg["Type"]])
+        varname = fix_varname(arg["Name"])
+        push!(params, varname)
+        push!(ctypes, d_typ_to_c[arg["Type"]])
+        s_doc_OptionalInputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
     end
-    params *= ", outBegIdx, outNBElement"
-    ctypes *= ", Ref{Cint}, Ref{Cint}"
+
+    for arg = ["outBegIdx", "outNBElement"]
+        varname = arg #uncamel(arg)
+        push!(params, varname)
+        push!(ctypes, "Ref{Cint}")
+    end
+
     for arg = func_info["OutputArguments"]
-        params *= (", " * arg["Name"])
-        ctypes *= (", " * d_typ[arg["Type"]])
+        varname = arg["Name"]
+        push!(params, varname)
+        push!(ctypes, d_typ_to_c[arg["Type"]])
+        s_doc_OutputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
     end
 
-#_TA_BBANDS(startIdx, endIdx, inReal, timeperiod, nbdevup, nbdevdn, matype, outBegIdx, outNBElement, outRealUpperBand, outRealMiddleBand, outRealLowerBand)
+    params = join(params, ", ")
+    ctypes = join(ctypes, ", ")
 
-    params * "\n" * ctypes
-
-    funcname = "_TA_" * string(s_func)
+    funcname = "_TA_" * string(symb_func)
+    c_funcname = "TA_" * string(symb_func)
     ret_typ = "TA_RetCode"
     s = "
 
@@ -114,27 +115,26 @@ $(func_info["ShortDescription"]) ($(func_info["CamelCaseName"]))
 
     $(func_info["GroupId"])
 
+    Level: 0 - raw
+
 Arguments:
-    Indexes:
-        - startIdx::Cint - start index
-        - endIdx::Cint - end index
 
-    RequiredInputArguments:
-        - ToDo
+    Indexes:$(s_doc_Index)
 
-    OptionalInputArguments:
-        - ToDo
+    RequiredInputArguments:$(s_doc_RequiredInputArguments)
 
-    OutputArguments:
-        - ToDo
+    OptionalInputArguments:$(s_doc_OptionalInputArguments)
+
+    OutputArguments:$(s_doc_OutputArguments)
 
 Returns:
-    - ::$ret_typ
+
+    ::$ret_typ
 
 \"\"\"
 function $funcname($params)
     ccall(
-        (:TA_BBANDS, TA_LIB_PATH), $ret_typ, 
+        (:$c_funcname, TA_LIB_PATH), $ret_typ, 
         ($ctypes),
         $params
     )
@@ -142,4 +142,103 @@ end"
 
 s
 end
+
+
+"""
+    generate_ta_func_with_arrays(d, symb)
+
+Generate function code (level 1) with arrays as input / output
+
+# Examples
+```julia
+julia> generate_ta_func_with_arrays(d, :MAC)
+"..."
+```
+"""
+function generate_ta_func_with_arrays(d, symb_func::Symbol)
+
+    func_info = d[symb_func]
+
+    s_doc_RequiredInputArguments = ""
+    s_doc_OptionalInputArguments = ""
+    s_doc_OutputArguments = ""
+    
+    params = ASCIIString[]
+    ctypes = ASCIIString[]
+
+    for arg = func_info["RequiredInputArguments"]
+        varname = arg["Name"]
+        push!(params, varname)
+        push!(ctypes, d_typ_to_c[arg["Type"]])
+        s_doc_RequiredInputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
+    end
+
+    for arg = func_info["OptionalInputArguments"]
+        varname = fix_varname(arg["Name"])
+        push!(params, varname)
+        push!(ctypes, d_typ_to_c[arg["Type"]])
+        s_doc_OptionalInputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
+    end
+
+    for arg = ["outBegIdx", "outNBElement"]
+        varname = arg #uncamel(arg)
+        push!(params, varname)
+        push!(ctypes, "Ref{Cint}")
+    end
+
+    for arg = func_info["OutputArguments"]
+        varname = arg["Name"]
+        push!(params, varname)
+        push!(ctypes, d_typ_to_c[arg["Type"]])
+        s_doc_OutputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
+    end
+
+    params = join(params, ", ")
+    ctypes = join(ctypes, ", ")
+
+    funcname = string(symb_func)
+    ret_typ = "???"
+    s = "
+
+\"\"\"
+    $funcname($params)
+
+$(func_info["ShortDescription"]) ($(func_info["CamelCaseName"]))
+
+    $(func_info["GroupId"])
+
+    Level: 1 - Arrays
+
+Arguments:
+
+    RequiredInputArguments:$(s_doc_RequiredInputArguments)
+
+    OptionalInputArguments:$(s_doc_OptionalInputArguments)
+
+
+Returns:$(s_doc_OutputArguments)
+
+\"\"\"
+function $funcname($params)
+
+end"
+
+s
+
+end
+
+function generate_ta_func_with_dataframes(d, symb_func::Symbol)
+
+end
+
+
+
+for s in keys(d)
+    println(generate_ta_func_raw(d, s))
+    #println(generate_ta_func_with_arrays(d, s))
+    #println(generate_ta_func_with_dataframes(d, s))
+end
+
+#println(repeat("=", 10))
+
 

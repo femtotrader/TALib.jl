@@ -46,15 +46,42 @@ function cleanup_prefix(s)
 end
 
 """
-    varname(s)
+    fix_varname(s)
+
+Lower case and replace spaces by underscores
 
 # Examples
 ```julia
-julia> varname("Time Period")
+julia> fix_varname("Time Period")
 time_period
 ```
 
 """
-function varname(s)
-    replace(lowercase(s), " ", "_")
+function fix_varname(s)
+    s = lowercase(s)
+    s = replace(s, " ", "_")
+    s = replace(s, "-", "_")
+    s
+end
+
+"""
+    replace_var(s)
+
+Replace a variable with a more appropriate name (using a dict)
+
+# Examples
+```julia
+julia> replace_var("Open")
+price_open
+```
+"""
+function replace_var(s)
+    d = Dict{ASCIIString, ASCIIString}(
+        "Open" => "price_open",
+        "High" => "price_high",
+        "Low" => "price_low",
+        "Close" => "price_close",
+        "Volume" => "volume",
+    )
+    get(d, s, s)
 end
