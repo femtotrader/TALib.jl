@@ -25,6 +25,7 @@ d = OrderedDict{Symbol,Any}()
 for func_info = lst_ta_func
     funcname = func_info["Abbreviation"]
     delete!(func_info, "Abbreviation")
+    l = []  # length of RequiredInputArguments, OptionalInputArguments, OutputArguments
     for key = ["RequiredInputArgument", "OptionalInputArgument", "OutputArgument"]
         if haskey(func_info, key * "s")
             if typeof(func_info[key * "s"][key]) == Dict{AbstractString,Any}
@@ -35,14 +36,27 @@ for func_info = lst_ta_func
         else
             func_info[key * "s"] = []
         end
+
         for arg = func_info[key * "s"]
             if !haskey(d_typ_to_c, arg["Type"])
                 error("$(arg["Type"]) is not a supported type")
             end
         end
+
+        push!(l, length(func_info[key * "s"]))
+
     end
+    #func_info["Length"] = l
     d[symbol(funcname)] = func_info
 end
+
+function write_json_file(d, filename="new_ta_func_api.json")
+    f = open(filename, "w")
+    JSON.print(f, d)
+    close(f)
+end
+
+write_json_file(d)
 
 """
     generate_ta_func_raw(d, symb)
