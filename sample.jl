@@ -14,7 +14,8 @@ for f in [GetVersionString, GetVersionMajor, GetVersionMinor, GetVersionBuild, G
     println(f())
 end
 
-println(FunctionDescriptionXML())
+s_xml = FunctionDescriptionXML()
+#println(s_xml)
 
 println("Input")
 inReal = [0, pi/2, pi, 3pi/2, 0, pi/2, pi, 3pi/2]
@@ -49,12 +50,17 @@ println("Read '$filename'")
 dfOHLCV = readtable(filename)
 dfOHLCV[:Date] = Date(dfOHLCV[:Date])
 println(dfOHLCV)
+opn = Array(dfOHLCV[:Open])
+hig = Array(dfOHLCV[:High])
+low = Array(dfOHLCV[:Low])
+cls = Array(dfOHLCV[:Close])
 price = Array(dfOHLCV[:Close])
+vol = Array(dfOHLCV[:Volume])
 println(price)
 
 println("MA")
 #indic = MA(price)
-indic = MA(price, timeperiod=30, matype=TA_MAType_SMA)
+indic = MA(price, time_period=30, ma_type=TA_MAType_SMA)
 println(indic)
 
 println(MA(dfOHLCV, price=:Close))
@@ -73,7 +79,7 @@ plot(dfOHLCV[:Date], dfOHLCV[:Open],
 println("BBANDS")
 println(price)
 #indic = BBANDS(price)
-#indic = BBANDS(price, timeperiod=30, nbdevup=2.0, nbdevdn=2.0, matype=TA_MAType_SMA)
+#indic = BBANDS(price, time_period=30, deviations_up=2.0, deviations_down=2.0, ma_type=TA_MAType_SMA)
 #println(indic)
 indic = BBANDS(dfOHLCV, price=:Close)
 println(indic)

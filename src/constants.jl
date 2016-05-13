@@ -7,6 +7,13 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
 
 const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
 
+_PRICE=:Close
+_OPEN=:Open
+_HIGH=:High
+_LOW=:Low
+_CLOSE=:Close
+_VOLUME=:Volume
+
 @enum(TA_RetCode, 
     TA_SUCCESS = 0,
     TA_LIB_NOT_INITIALIZE = 1,
@@ -93,4 +100,30 @@ const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
     TA_Far = 9,
     TA_Equal = 10,
     TA_AllCandleSettings = 11
+)
+
+d_typ_to_c = Dict(
+   "Integer" => "Cint",
+   "Double" => "Cdouble",
+   "Integer Array" => "Ptr{Cint}",
+   "Double Array" => "Ptr{Cdouble}",
+   "MA Type" => "TA_MAType",
+   "Open" => "Ptr{Cdouble}",
+   "High" => "Ptr{Cdouble}",
+   "Low" => "Ptr{Cdouble}",
+   "Close" => "Ptr{Cdouble}",
+   "Volume" => "Ptr{Cdouble}",
+)
+
+d_typ_to_jl = Dict(
+   "Integer" => "Integer",
+   "Double" => "AbstractFloat",
+   "Integer Array" => "Array{Integer,1}",
+   "Double Array" => "Array{Float64,1}",
+   "MA Type" => "TA_MAType",
+   "Open" => "Array{Float64,1}",
+   "High" => "Array{Float64,1}",
+   "Low" => "Array{Float64,1}",
+   "Close" => "Array{Float64,1}",
+   "Volume" => "Array{Float64,1}",
 )
