@@ -45,4 +45,14 @@ function create_dict_of_ta_func(filename="")
 end
 
 D_INDICATORS = create_dict_of_ta_func()
-INDICATORS = [func for func in keys(D_INDICATORS)]
+INDICATORS = Symbol[func for func in keys(D_INDICATORS)]
+
+D_GROUPS = D_GROUPS = Dict{ASCIIString, Array{Symbol,1}}()
+for (func, val) in D_INDICATORS
+    key = val["GroupId"]
+    if !haskey(D_GROUPS, key)
+        D_GROUPS[key] = Symbol[func]
+    else
+        push!(D_GROUPS[key], func)
+    end
+end

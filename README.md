@@ -2,7 +2,7 @@
 
 WORK IN PROGRESS - NOT USABLE FOR NOW
 
-[![Build Status](https://travis-ci.org/femtotrader/TA-Lib.jl.svg?branch=master)](https://travis-ci.org/femtotrader/TA-Lib.jl)
+[![Build Status](https://travis-ci.org/femtotrader/TALib.jl.svg?branch=master)](https://travis-ci.org/femtotrader/TALib.jl)
 
 A [Julia](http://julialang.org/) wrapper for [TA-Lib](http://ta-lib.org/) (Technical Analysis Library)
 
@@ -174,8 +174,300 @@ julia> plot(
 
 ![BBANDS](screenshots/BBANDS.png)
 
+## Indicators
+
+An `Array` containing `Symbol`s of available TA-Lib indicators can be displayed using:
+
+```julia
+julia> INDICATORS
+158-element Array{Symbol,1}:
+ :ACOS
+ :AD
+ :ADD
+ :ADOSC
+ :ADX
+ :ADXR
+ :APO
+ :AROON
+ :AROONOSC
+ :ASIN
+ :ATAN
+ :ATR
+ :AVGPRICE
+ :BBANDS
+ :BETA
+ :BOP
+ :CCI
+ :CDL2CROWS
+ :CDL3BLACKCROWS
+ ⋮
+ :STOCH
+ :STOCHF
+ :STOCHRSI
+ :SUB
+ :SUM
+ :T3
+ :TAN
+ :TANH
+ :TEMA
+ :TRANGE
+ :TRIMA
+ :TRIX
+ :TSF
+ :TYPPRICE
+ :ULTOSC
+ :VAR
+ :WCLPRICE
+ :WILLR
+ :WMA
+```
+
+An `OrderedDict` containing properties (required parameters, optional parameters, default values...)
+of available TA-Lib indicators can be displayed using:
+
+```julia
+julia> D_INDICATORS
+DataStructures.OrderedDict{Symbol,Any} with 158 entries:
+  :ACOS                => Dict{AbstractString,Any}("GroupId"=>"Math Transform","CamelCaseName"=>"Acos","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"Line"…
+  :AD                  => Dict{AbstractString,Any}("GroupId"=>"Volume Indicators","CamelCaseName"=>"Ad","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"Line…
+  :ADD                 => Dict{AbstractString,Any}("GroupId"=>"Math Operators","CamelCaseName"=>"Add","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"Line")…
+  :ADOSC               => Dict{AbstractString,Any}("GroupId"=>"Volume Indicators","CamelCaseName"=>"AdOsc","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"L…
+  :ADX                 => Dict{AbstractString,Any}("GroupId"=>"Momentum Indicators","Flags"=>Dict{AbstractString,Any}("Flag"=>"Unstable Period"),"CamelCaseName"=>"Adx","OutputArguments"=>[Dict{Abs…
+  :ADXR                => Dict{AbstractString,Any}("GroupId"=>"Momentum Indicators","Flags"=>Dict{AbstractString,Any}("Flag"=>"Unstable Period"),"CamelCaseName"=>"Adxr","OutputArguments"=>[Dict{Ab…
+  :APO                 => Dict{AbstractString,Any}("GroupId"=>"Momentum Indicators","CamelCaseName"=>"Apo","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"L…
+  :AROON               => Dict{AbstractString,Any}("GroupId"=>"Momentum Indicators","CamelCaseName"=>"Aroon","OutputArguments"=>Any[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag…
+  :AROONOSC            => Dict{AbstractString,Any}("GroupId"=>"Momentum Indicators","CamelCaseName"=>"AroonOsc","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag…
+  :ASIN                => Dict{AbstractString,Any}("GroupId"=>"Math Transform","CamelCaseName"=>"Asin","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"Line"…
+  :ATAN                => Dict{AbstractString,Any}("GroupId"=>"Math Transform","CamelCaseName"=>"Atan","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"Line"…
+  :ATR                 => Dict{AbstractString,Any}("GroupId"=>"Volatility Indicators","Flags"=>Dict{AbstractString,Any}("Flag"=>"Unstable Period"),"CamelCaseName"=>"Atr","OutputArguments"=>[Dict{A…
+  :AVGPRICE            => Dict{AbstractString,Any}("GroupId"=>"Price Transform","Flags"=>Dict{AbstractString,Any}("Flag"=>"Overlap"),"CamelCaseName"=>"AvgPrice","OutputArguments"=>[Dict{AbstractSt…
+  :BBANDS              => Dict{AbstractString,Any}("GroupId"=>"Overlap Studies","Flags"=>Dict{AbstractString,Any}("Flag"=>"Overlap"),"CamelCaseName"=>"Bbands","OutputArguments"=>Any[Dict{AbstractS…
+  :BETA                => Dict{AbstractString,Any}("GroupId"=>"Statistic Functions","CamelCaseName"=>"Beta","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"…
+  :BOP                 => Dict{AbstractString,Any}("GroupId"=>"Momentum Indicators","CamelCaseName"=>"Bop","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"L…
+  :CCI                 => Dict{AbstractString,Any}("GroupId"=>"Momentum Indicators","CamelCaseName"=>"Cci","OutputArguments"=>[Dict{AbstractString,Any}("Flags"=>Dict{AbstractString,Any}("Flag"=>"L…
+  :CDL2CROWS           => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"Cdl2Crows","OutputArguments"=>[Dict{A…
+  :CDL3BLACKCROWS      => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"Cdl3BlackCrows","OutputArguments"=>[D…
+  :CDL3INSIDE          => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"Cdl3Inside","OutputArguments"=>[Dict{…
+  :CDL3LINESTRIKE      => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"Cdl3LineStrike","OutputArguments"=>[D…
+  :CDL3OUTSIDE         => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"Cdl3Outside","OutputArguments"=>[Dict…
+  :CDL3STARSINSOUTH    => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"Cdl3StarsInSouth","OutputArguments"=>…
+  :CDL3WHITESOLDIERS   => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"Cdl3WhiteSoldiers","OutputArguments"=…
+  :CDLABANDONEDBABY    => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlAbandonedBaby","OutputArguments"=>…
+  :CDLADVANCEBLOCK     => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlAdvanceBlock","OutputArguments"=>[…
+  :CDLBELTHOLD         => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlBeltHold","OutputArguments"=>[Dict…
+  :CDLBREAKAWAY        => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlBreakaway","OutputArguments"=>[Dic…
+  :CDLCLOSINGMARUBOZU  => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlClosingMarubozu","OutputArguments"…
+  :CDLCONCEALBABYSWALL => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlConcealBabysWall","OutputArguments…
+  :CDLCOUNTERATTACK    => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlCounterAttack","OutputArguments"=>…
+  :CDLDARKCLOUDCOVER   => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlDarkCloudCover","OutputArguments"=…
+  :CDLDOJI             => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlDoji","OutputArguments"=>[Dict{Abs…
+  :CDLDOJISTAR         => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlDojiStar","OutputArguments"=>[Dict…
+  :CDLDRAGONFLYDOJI    => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlDragonflyDoji","OutputArguments"=>…
+  :CDLENGULFING        => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlEngulfing","OutputArguments"=>[Dic…
+  :CDLEVENINGDOJISTAR  => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlEveningDojiStar","OutputArguments"…
+  :CDLEVENINGSTAR      => Dict{AbstractString,Any}("GroupId"=>"Pattern Recognition","Flags"=>Dict{AbstractString,Any}("Flag"=>"Candlestick"),"CamelCaseName"=>"CdlEveningStar","OutputArguments"=>[D…
+  ⋮                    => ⋮
+```
+
+A `Dict` of functions by group is available using:
+
+```julia
+julia> D_GROUPS
+Dict{ASCIIString,Array{Symbol,1}} with 10 entries:
+  "Price Transform"       => [:AVGPRICE,:MEDPRICE,:TYPPRICE,:WCLPRICE]
+  "Momentum Indicators"   => [:ADX,:ADXR,:APO,:AROON,:AROONOSC,:BOP,:CCI,:CMO,:DX,:MACD  …  :ROCP,:ROCR,:ROCR100,:RSI,:STOCH,:STOCHF,:STOCHRSI,:TRIX,:ULTOSC,:WILLR]
+  "Statistic Functions"   => [:BETA,:CORREL,:LINEARREG,:LINEARREG_ANGLE,:LINEARREG_INTERCEPT,:LINEARREG_SLOPE,:STDDEV,:TSF,:VAR]
+  "Volatility Indicators" => [:ATR,:NATR,:TRANGE]
+  "Overlap Studies"       => [:BBANDS,:DEMA,:EMA,:HT_TRENDLINE,:KAMA,:MA,:MAMA,:MAVP,:MIDPOINT,:MIDPRICE,:SAR,:SAREXT,:SMA,:T3,:TEMA,:TRIMA,:WMA]
+  "Math Transform"        => [:ACOS,:ASIN,:ATAN,:CEIL,:COS,:COSH,:EXP,:FLOOR,:LN,:LOG10,:SIN,:SINH,:SQRT,:TAN,:TANH]
+  "Cycle Indicators"      => [:HT_DCPERIOD,:HT_DCPHASE,:HT_PHASOR,:HT_SINE,:HT_TRENDMODE]
+  "Pattern Recognition"   => [:CDL2CROWS,:CDL3BLACKCROWS,:CDL3INSIDE,:CDL3LINESTRIKE,:CDL3OUTSIDE,:CDL3STARSINSOUTH,:CDL3WHITESOLDIERS,:CDLABANDONEDBABY,:CDLADVANCEBLOCK,:CDLBELTHOLD  …  :CDLSPINN…
+  "Volume Indicators"     => [:AD,:ADOSC,:OBV]
+  "Math Operators"        => [:ADD,:DIV,:MAX,:MAXINDEX,:MIN,:MININDEX,:MINMAX,:MINMAXINDEX,:MULT,:SUB,:SUM]
+```
+
+Description of all indicators
+
+```julia
+for (func, info) in D_INDICATORS
+    descr = info["ShortDescription"]
+    println("|$func|$descr|")
+end
+```
+
+should display
+
+|Name    |Short description|
+|--------|-----------------|
+|ACOS|Vector Trigonometric ACos|
+|AD|Chaikin A/D Line|
+|ADD|Vector Arithmetic Add|
+|ADOSC|Chaikin A/D Oscillator|
+|ADX|Average Directional Movement Index|
+|ADXR|Average Directional Movement Index Rating|
+|APO|Absolute Price Oscillator|
+|AROON|Aroon|
+|AROONOSC|Aroon Oscillator|
+|ASIN|Vector Trigonometric ASin|
+|ATAN|Vector Trigonometric ATan|
+|ATR|Average True Range|
+|AVGPRICE|Average Price|
+|BBANDS|Bollinger Bands|
+|BETA|Beta|
+|BOP|Balance Of Power|
+|CCI|Commodity Channel Index|
+|CDL2CROWS|Two Crows|
+|CDL3BLACKCROWS|Three Black Crows|
+|CDL3INSIDE|Three Inside Up/Down|
+|CDL3LINESTRIKE|Three-Line Strike |
+|CDL3OUTSIDE|Three Outside Up/Down|
+|CDL3STARSINSOUTH|Three Stars In The South|
+|CDL3WHITESOLDIERS|Three Advancing White Soldiers|
+|CDLABANDONEDBABY|Abandoned Baby|
+|CDLADVANCEBLOCK|Advance Block|
+|CDLBELTHOLD|Belt-hold|
+|CDLBREAKAWAY|Breakaway|
+|CDLCLOSINGMARUBOZU|Closing Marubozu|
+|CDLCONCEALBABYSWALL|Concealing Baby Swallow|
+|CDLCOUNTERATTACK|Counterattack|
+|CDLDARKCLOUDCOVER|Dark Cloud Cover|
+|CDLDOJI|Doji|
+|CDLDOJISTAR|Doji Star|
+|CDLDRAGONFLYDOJI|Dragonfly Doji|
+|CDLENGULFING|Engulfing Pattern|
+|CDLEVENINGDOJISTAR|Evening Doji Star|
+|CDLEVENINGSTAR|Evening Star|
+|CDLGAPSIDESIDEWHITE|Up/Down-gap side-by-side white lines|
+|CDLGRAVESTONEDOJI|Gravestone Doji|
+|CDLHAMMER|Hammer|
+|CDLHANGINGMAN|Hanging Man|
+|CDLHARAMI|Harami Pattern|
+|CDLHARAMICROSS|Harami Cross Pattern|
+|CDLHIGHWAVE|High-Wave Candle|
+|CDLHIKKAKE|Hikkake Pattern|
+|CDLHIKKAKEMOD|Modified Hikkake Pattern|
+|CDLHOMINGPIGEON|Homing Pigeon|
+|CDLIDENTICAL3CROWS|Identical Three Crows|
+|CDLINNECK|In-Neck Pattern|
+|CDLINVERTEDHAMMER|Inverted Hammer|
+|CDLKICKING|Kicking|
+|CDLKICKINGBYLENGTH|Kicking - bull/bear determined by the longer marubozu|
+|CDLLADDERBOTTOM|Ladder Bottom|
+|CDLLONGLEGGEDDOJI|Long Legged Doji|
+|CDLLONGLINE|Long Line Candle|
+|CDLMARUBOZU|Marubozu|
+|CDLMATCHINGLOW|Matching Low|
+|CDLMATHOLD|Mat Hold|
+|CDLMORNINGDOJISTAR|Morning Doji Star|
+|CDLMORNINGSTAR|Morning Star|
+|CDLONNECK|On-Neck Pattern|
+|CDLPIERCING|Piercing Pattern|
+|CDLRICKSHAWMAN|Rickshaw Man|
+|CDLRISEFALL3METHODS|Rising/Falling Three Methods|
+|CDLSEPARATINGLINES|Separating Lines|
+|CDLSHOOTINGSTAR|Shooting Star|
+|CDLSHORTLINE|Short Line Candle|
+|CDLSPINNINGTOP|Spinning Top|
+|CDLSTALLEDPATTERN|Stalled Pattern|
+|CDLSTICKSANDWICH|Stick Sandwich|
+|CDLTAKURI|Takuri (Dragonfly Doji with very long lower shadow)|
+|CDLTASUKIGAP|Tasuki Gap|
+|CDLTHRUSTING|Thrusting Pattern|
+|CDLTRISTAR|Tristar Pattern|
+|CDLUNIQUE3RIVER|Unique 3 River|
+|CDLUPSIDEGAP2CROWS|Upside Gap Two Crows|
+|CDLXSIDEGAP3METHODS|Upside/Downside Gap Three Methods|
+|CEIL|Vector Ceil|
+|CMO|Chande Momentum Oscillator|
+|CORREL|Pearson's Correlation Coefficient (r)|
+|COS|Vector Trigonometric Cos|
+|COSH|Vector Trigonometric Cosh|
+|DEMA|Double Exponential Moving Average|
+|DIV|Vector Arithmetic Div|
+|DX|Directional Movement Index|
+|EMA|Exponential Moving Average|
+|EXP|Vector Arithmetic Exp|
+|FLOOR|Vector Floor|
+|HT_DCPERIOD|Hilbert Transform - Dominant Cycle Period|
+|HT_DCPHASE|Hilbert Transform - Dominant Cycle Phase|
+|HT_PHASOR|Hilbert Transform - Phasor Components|
+|HT_SINE|Hilbert Transform - SineWave|
+|HT_TRENDLINE|Hilbert Transform - Instantaneous Trendline|
+|HT_TRENDMODE|Hilbert Transform - Trend vs Cycle Mode|
+|KAMA|Kaufman Adaptive Moving Average|
+|LINEARREG|Linear Regression|
+|LINEARREG_ANGLE|Linear Regression Angle|
+|LINEARREG_INTERCEPT|Linear Regression Intercept|
+|LINEARREG_SLOPE|Linear Regression Slope|
+|LN|Vector Log Natural|
+|LOG10|Vector Log10|
+|MA|Moving average|
+|MACD|Moving Average Convergence/Divergence|
+|MACDEXT|MACD with controllable MA type|
+|MACDFIX|Moving Average Convergence/Divergence Fix 12/26|
+|MAMA|MESA Adaptive Moving Average|
+|MAVP|Moving average with variable period|
+|MAX|Highest value over a specified period|
+|MAXINDEX|Index of highest value over a specified period|
+|MEDPRICE|Median Price|
+|MFI|Money Flow Index|
+|MIDPOINT|MidPoint over period|
+|MIDPRICE|Midpoint Price over period|
+|MIN|Lowest value over a specified period|
+|MININDEX|Index of lowest value over a specified period|
+|MINMAX|Lowest and highest values over a specified period|
+|MINMAXINDEX|Indexes of lowest and highest values over a specified period|
+|MINUS_DI|Minus Directional Indicator|
+|MINUS_DM|Minus Directional Movement|
+|MOM|Momentum|
+|MULT|Vector Arithmetic Mult|
+|NATR|Normalized Average True Range|
+|OBV|On Balance Volume|
+|PLUS_DI|Plus Directional Indicator|
+|PLUS_DM|Plus Directional Movement|
+|PPO|Percentage Price Oscillator|
+|ROC|Rate of change : ((price/prevPrice)-1)*100|
+|ROCP|Rate of change Percentage: (price-prevPrice)/prevPrice|
+|ROCR|Rate of change ratio: (price/prevPrice)|
+|ROCR100|Rate of change ratio 100 scale: (price/prevPrice)*100|
+|RSI|Relative Strength Index|
+|SAR|Parabolic SAR|
+|SAREXT|Parabolic SAR - Extended|
+|SIN|Vector Trigonometric Sin|
+|SINH|Vector Trigonometric Sinh|
+|SMA|Simple Moving Average|
+|SQRT|Vector Square Root|
+|STDDEV|Standard Deviation|
+|STOCH|Stochastic|
+|STOCHF|Stochastic Fast|
+|STOCHRSI|Stochastic Relative Strength Index|
+|SUB|Vector Arithmetic Substraction|
+|SUM|Summation|
+|T3|Triple Exponential Moving Average (T3)|
+|TAN|Vector Trigonometric Tan|
+|TANH|Vector Trigonometric Tanh|
+|TEMA|Triple Exponential Moving Average|
+|TRANGE|True Range|
+|TRIMA|Triangular Moving Average|
+|TRIX|1-day Rate-Of-Change (ROC) of a Triple Smooth EMA|
+|TSF|Time Series Forecast|
+|TYPPRICE|Typical Price|
+|ULTOSC|Ultimate Oscillator|
+|VAR|Variance|
+|WCLPRICE|Weighted Close Price|
+|WILLR|Williams' %R|
+|WMA|Weighted Moving Average|
 
 ## Development
 
 See discussion and roadmap here:
 - https://github.com/femtotrader/TALib.jl/issues/1
+
+- There is 3 levels of functions
+
+  - level 0: raw C TA-Lib function calls
+  - level 1: function with Julia `Array`s as inputs / outputs
+  - level 2: more high level functions with
+
+    - `DataFrame` (from [DataFrames.jl](http://dataframesjl.readthedocs.io/)) as inputs / outputs
+    - `TimeArray` (from [TimeSeries.jl](http://timeseriesjl.readthedocs.io/)) as inputs / outputs

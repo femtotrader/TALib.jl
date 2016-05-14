@@ -38,7 +38,7 @@ end
 
 using DataFrames
 
-export D_INDICATORS, INDICATORS
+export D_INDICATORS, INDICATORS, D_GROUPS
 
 function _ta_check_success(function_name::ASCIIString, ret_code::TA_RetCode)
     errorCode = TA_RetCode(ret_code)
