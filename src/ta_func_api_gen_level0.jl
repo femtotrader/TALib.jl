@@ -29,10 +29,10 @@ function generate_ta_func_raw(d::OrderedDict{Symbol,Any}, symb_func::Symbol)
 
     for arg = func_info["RequiredInputArguments"]
         varname = replace_var(arg["Name"])
-        vartype = d_typ_to_c[arg["Type"]]
+        vartyp = d_typ_to_c[arg["Type"]]
         push!(params, string(varname))
-        push!(ctypes, string(vartype))
-        s_doc_RequiredInputArguments *= "\n        - $varname::$vartype"
+        push!(ctypes, string(vartyp))
+        s_doc_RequiredInputArguments *= "\n        - $varname::$vartyp"
     end
 
     for arg = func_info["OptionalInputArguments"]

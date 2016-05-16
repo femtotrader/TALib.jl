@@ -47,7 +47,7 @@ function generate_all_code(d::OrderedDict{Symbol,Any})
 
     println("# Generate level 2 code - DataFrames")
     filename = path * "ta_func_api_code_level2_dataframes.jl"
-    s_code = generate_code(d, generate_header, generate_ta_func_with_dataframes, generate_footer)
+    s_code = generate_code(d, generate_header_ta_func_with_dataframes, generate_ta_func_with_dataframes, generate_footer)
     f = open(filename, "w")
     write(f, s_code)
     close(f)

@@ -1,4 +1,5 @@
 using DataStructures
+using JSON
 
 function FunctionDescriptionXML()
     bytestring(ccall(("TA_FunctionDescriptionXML", TA_LIB_PATH), Cstring, ()))

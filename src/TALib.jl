@@ -74,7 +74,7 @@ for f in [:Initialize, :Shutdown]
     end
 end
 
-
+#=
 
 function MA(dfOHLCV::DataFrames.DataFrame; time_period=Integer(30), ma_type=TA_MAType(0), price=_PRICE)
     price = Array(dfOHLCV[price])
@@ -99,6 +99,7 @@ function BBANDS(dfOHLCV::DataFrames.DataFrame; time_period=Integer(30), deviatio
     df
 end
 
+=#
 
 
 end # module

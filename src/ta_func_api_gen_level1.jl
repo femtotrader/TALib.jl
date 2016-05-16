@@ -122,30 +122,30 @@ function $funcname($params_lv1_with_types)
     end_idx = N - 1
     outBegIdx = Ref{Cint}(0)
     outNbElement = Ref{Cint}(0)"
-indent = "    "
+
 
 for arg = params_OutputArguments
     varname = arg
     s *= "\n"
-    s *= indent * "$(varname) = fill(NaN, N)"
+    s *= INDENT * "$(varname) = fill(NaN, N)"
 end
 
 s *= "\n"
-s *= indent * "ret_code = _TA_$funcname($params_lv0)"
+s *= INDENT * "ret_code = _TA_$funcname($params_lv0)"
 s *= "\n"
-s *= indent * "_ta_check_success(\"$funcname\", ret_code)"
+s *= INDENT * "_ta_check_success(\"$funcname\", ret_code)"
 
 for arg = params_OutputArguments
     s *= "\n"
-    s *= indent * "$arg = circshift($arg, outBegIdx[])"
+    s *= INDENT * "$arg = circshift($arg, outBegIdx[])"
 end
 
 s *= "\n"
 if length(params_OutputArguments) == 1
-    s *= indent * params_OutputArguments[1]
+    s *= INDENT * params_OutputArguments[1]
 else
-    s *= indent * "[" * join(params_OutputArguments, " ") * "]"  # output as Array{Any,2}
-    #s *= indent * join(params_OutputArguments, ", ")  # output as tuple of array
+    s *= INDENT * "[" * join(params_OutputArguments, " ") * "]"  # output as Array{Any,2}
+    #s *= INDENT * join(params_OutputArguments, ", ")  # output as tuple of array
 end
 s *= "\n"
 s *= "end"

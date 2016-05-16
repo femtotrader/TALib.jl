@@ -37,10 +37,18 @@ CamelCase
 
 """
 function cleanup_prefix(s)
-    for prefix in ["in", "optIn", "outReal"]
-        if startswith(s, prefix) && s != prefix
-            N = length(prefix)
-            s = s[N+1:end]
+    for prefix in ["in", "optIn", "outReal", "outInteger"]
+        if startswith(s, prefix)
+            if s != prefix
+                N = length(prefix)
+                s = s[N+1:end]
+            else
+                d = Dict(
+                    "outInteger"=>"Integer",
+                    "outReal"=>"Real",
+                )
+                s = d[s]
+            end
         end
     end
     s
@@ -83,6 +91,25 @@ function replace_var(s::AbstractString)
         "Low" => :price_low,
         "Close" => :price_close,
         "Volume" => :volume,
+    )
+    get(d, s, symbol(s))
+end
+
+"""
+    replace_output(s)
+
+Replace a column name with a more appropriate name (using a dict)
+
+# Examples
+```julia
+julia> replace_output("outReal")
+:Value
+```
+"""
+function replace_output(s::AbstractString)
+    d = Dict{ASCIIString, Symbol}(
+        "outInteger" => :Value,
+        "outReal" => :Value,
     )
     get(d, s, symbol(s))
 end

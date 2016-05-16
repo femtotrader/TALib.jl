@@ -7,6 +7,8 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
 
 const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
 
+INDENT = "    "
+
 _PRICE=:Close
 _OPEN=:Open
 _HIGH=:High
@@ -102,7 +104,7 @@ _VOLUME=:Volume
     TA_AllCandleSettings = 11
 )
 
-d_typ_to_c = Dict(
+d_typ_to_c = Dict{ASCIIString,Any}(
    "Integer" => :Cint,
    "Double" => :Cdouble,
    "Integer Array" => :(Ptr{Cint}),
@@ -115,7 +117,7 @@ d_typ_to_c = Dict(
    "Volume" => :(Ptr{Cdouble}),
 )
 
-d_typ_to_jl = Dict(
+d_typ_to_jl = Dict{ASCIIString,Any}(
    "Integer" => :Integer,
    "Double" => :AbstractFloat,
    "Integer Array" => :(Array{Integer,1}),
