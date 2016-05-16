@@ -43,6 +43,7 @@ function cleanup_prefix(s)
             s = s[N+1:end]
         end
     end
+    s
 end
 
 """
@@ -72,16 +73,16 @@ Replace a variable with a more appropriate name (using a dict)
 # Examples
 ```julia
 julia> replace_var("Open")
-price_open
+:price_open
 ```
 """
-function replace_var(s)
-    d = Dict{ASCIIString, ASCIIString}(
-        "Open" => "price_open",
-        "High" => "price_high",
-        "Low" => "price_low",
-        "Close" => "price_close",
-        "Volume" => "volume",
+function replace_var(s::AbstractString)
+    d = Dict{ASCIIString, Symbol}(
+        "Open" => :price_open,
+        "High" => :price_high,
+        "Low" => :price_low,
+        "Close" => :price_close,
+        "Volume" => :volume,
     )
-    get(d, s, s)
+    get(d, s, symbol(s))
 end

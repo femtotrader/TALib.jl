@@ -32,20 +32,23 @@ function generate_ta_func_with_arrays(d::OrderedDict{Symbol,Any}, symb_func::Sym
 
     for arg = func_info["RequiredInputArguments"]
         varname = replace_var(arg["Name"])
-        push!(params_lv0, varname)
-        push!(params_lv1, varname)
-        push!(params_RequiredInputArguments, varname)
-        push!(jltypes, d_typ_to_jl[arg["Type"]])
-        s_doc_RequiredInputArguments *= "\n        - " * varname * "::" * d_typ_to_jl[arg["Type"]]
+        vartyp = d_typ_to_jl[arg["Type"]]
+        push!(params_lv0, string(varname))
+        push!(params_lv1, string(varname))
+        push!(params_RequiredInputArguments, string(varname))
+        push!(jltypes, string(vartyp))
+        s_doc_RequiredInputArguments *= "\n        - $varname::$vartyp"
     end
 
     for arg = func_info["OptionalInputArguments"]
         varname = fix_varname(arg["Name"])
+        vartyp = d_typ_to_jl[arg["Type"]]
+        def_val = arg["DefaultValue"]
         push!(params_lv0, varname)
         push!(params_lv1, varname)
         push!(params_OptionalInputArguments, varname)
-        push!(jltypes, d_typ_to_jl[arg["Type"]])
-        s_doc_OptionalInputArguments *= "\n        - " * varname * "=" * d_typ_to_jl[arg["Type"]] * "(" * string(arg["DefaultValue"]) * ")"
+        push!(jltypes, string(vartyp))
+        s_doc_OptionalInputArguments *= "\n        - $varname=$vartyp($def_val)"
     end
 
     for arg = ["outBegIdx", "outNbElement"]
@@ -56,10 +59,11 @@ function generate_ta_func_with_arrays(d::OrderedDict{Symbol,Any}, symb_func::Sym
 
     for arg = func_info["OutputArguments"]
         varname = arg["Name"]
+        vartyp = d_typ_to_jl[arg["Type"]]
         push!(params_lv0, varname)
         push!(params_OutputArguments, varname)
-        push!(jltypes, d_typ_to_jl[arg["Type"]])
-        s_doc_OutputArguments *= "\n        - " * varname * "::" * d_typ_to_jl[arg["Type"]]
+        push!(jltypes, string(vartyp))
+        s_doc_OutputArguments *= "\n        - $varname::$vartyp"
     end
 
     params_lv0 = join(params_lv0, ", ")
@@ -71,7 +75,8 @@ function generate_ta_func_with_arrays(d::OrderedDict{Symbol,Any}, symb_func::Sym
             params_lv1_with_types *= ", "
         end
         varname = replace_var(arg["Name"])
-        params_lv1_with_types *= varname * "::" * d_typ_to_jl[arg["Type"]]
+        vartyp = d_typ_to_jl[arg["Type"]]
+        params_lv1_with_types *= "$varname::$vartyp"
     end
     for (index, arg) in enumerate(func_info["OptionalInputArguments"])
         if index != 1
@@ -80,7 +85,9 @@ function generate_ta_func_with_arrays(d::OrderedDict{Symbol,Any}, symb_func::Sym
             params_lv1_with_types *= "; "
         end
         varname = fix_varname(arg["Name"])
-        params_lv1_with_types *= varname * "=" * d_typ_to_jl[arg["Type"]] * "(" * string(arg["DefaultValue"]) * ")"
+        vartyp = d_typ_to_jl[arg["Type"]]
+        def_val = arg["DefaultValue"]
+        params_lv1_with_types *= "$varname=$vartyp($def_val)"
     end
 
     jltypes = join(jltypes, ", ")

@@ -21,24 +21,26 @@ function generate_ta_func_raw(d::OrderedDict{Symbol,Any}, symb_func::Symbol)
     ctypes = ASCIIString[]
     for arg = ["startIdx", "endIdx"]
         varname = uncamel(arg)
-        typ = "Cint"
+        vartyp = "Cint"
         push!(params, varname)
-        push!(ctypes, typ)
-        s_doc_Index *= "\n        - " * arg * "::" * typ
+        push!(ctypes, vartyp)
+        s_doc_Index *= "\n        - $arg::$vartyp"
     end
 
     for arg = func_info["RequiredInputArguments"]
         varname = replace_var(arg["Name"])
-        push!(params, varname)
-        push!(ctypes, d_typ_to_c[arg["Type"]])
-        s_doc_RequiredInputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
+        vartype = d_typ_to_c[arg["Type"]]
+        push!(params, string(varname))
+        push!(ctypes, string(vartype))
+        s_doc_RequiredInputArguments *= "\n        - $varname::$vartype"
     end
 
     for arg = func_info["OptionalInputArguments"]
         varname = fix_varname(arg["Name"])
+        vartyp = d_typ_to_c[arg["Type"]]
         push!(params, varname)
-        push!(ctypes, d_typ_to_c[arg["Type"]])
-        s_doc_OptionalInputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
+        push!(ctypes, string(vartyp))
+        s_doc_OptionalInputArguments *= "\n        - $varname::$vartyp"
     end
 
     for arg = ["outBegIdx", "outNbElement"]
@@ -49,9 +51,10 @@ function generate_ta_func_raw(d::OrderedDict{Symbol,Any}, symb_func::Symbol)
 
     for arg = func_info["OutputArguments"]
         varname = arg["Name"]
+        vartyp = d_typ_to_c[arg["Type"]]
         push!(params, varname)
-        push!(ctypes, d_typ_to_c[arg["Type"]])
-        s_doc_OutputArguments *= "\n        - " * varname * "::" * d_typ_to_c[arg["Type"]]
+        push!(ctypes, string(vartyp))
+        s_doc_OutputArguments *= "\n        - $varname::$vartyp"
     end
 
     params = join(params, ", ")
