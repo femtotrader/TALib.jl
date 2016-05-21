@@ -22,7 +22,7 @@ julia> dfOHLCV[:Date] = Date(dfOHLCV[:Date])
 julia> dfOHLCV
 250x6 DataFrames.DataFrame
 │ Row │ Date       │ Open  │ High  │ Low   │ Close │ Volume    │
-┝━━━━━┿━━━━━━━━━━━━┿━━━━━━━┿━━━━━━━┿━━━━━━━┿━━━━━━━┿━━━━━━━━━━━┥
+├─────┼────────────┼───────┼───────┼───────┼───────┼───────────┤
 │ 1   │ 2012-01-03 │ 11.0  │ 11.25 │ 10.99 │ 11.13 │ 45709900  │
 │ 2   │ 2012-01-04 │ 11.15 │ 11.53 │ 11.07 │ 11.3  │ 79725200  │
 │ 3   │ 2012-01-05 │ 11.33 │ 11.63 │ 11.24 │ 11.59 │ 67877500  │
@@ -71,7 +71,7 @@ julia> dfOHLCV
 julia> indic = MA(dfOHLCV, price=:Close)
 250x2 DataFrames.DataFrame
 │ Row │ Date       │ Value   │
-┝━━━━━┿━━━━━━━━━━━━┿━━━━━━━━━┥
+├─────┼────────────┼─────────┤
 │ 1   │ 2012-01-03 │ NaN     │
 │ 2   │ 2012-01-04 │ NaN     │
 │ 3   │ 2012-01-05 │ NaN     │
@@ -123,7 +123,7 @@ julia> plot(dfOHLCV[:Date], dfOHLCV[:Close], dfOHLCV[:Date], indic)
 julia> indic = BBANDS(dfOHLCV, price=:Close)
 250x4 DataFrames.DataFrame
 │ Row │ Date       │ UpperBand │ MiddleBand │ LowerBand │
-┝━━━━━┿━━━━━━━━━━━━┿━━━━━━━━━━━┿━━━━━━━━━━━━┿━━━━━━━━━━━┥
+├─────┼────────────┼───────────┼────────────┼───────────┤
 │ 1   │ 2012-01-03 │ NaN       │ NaN        │ NaN       │
 │ 2   │ 2012-01-04 │ NaN       │ NaN        │ NaN       │
 │ 3   │ 2012-01-05 │ NaN       │ NaN        │ NaN       │
