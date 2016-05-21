@@ -46,6 +46,7 @@ outReal = ATAN(angles)
 filename = basepath() * "ford_2012.csv"
 dfOHLCV = readtable(filename)
 dfOHLCV[:Date] = Date(dfOHLCV[:Date])
+dt = Array(dfOHLCV[:Date])
 opn = Array(dfOHLCV[:Open])
 hig = Array(dfOHLCV[:High])
 low = Array(dfOHLCV[:Low])

@@ -14,10 +14,11 @@ include("path.jl")
 include("describe.jl")
 
 import_generated = true
-for filename in ["ta_func_api_code_level0.jl", 
-            "ta_func_api_code_level1.jl",
-            "ta_func_api_code_level2_dataframes.jl"]
-    filename = "generated/" * filename
+for filename in ["ta_func_api_code_level0", 
+            "ta_func_api_code_level1", 
+            "ta_func_api_code_level2_dataframes", 
+            "ta_func_api_code_level2_timearrays"]
+    filename = "generated/" * filename * ".jl"
     try
         include(filename)
     catch

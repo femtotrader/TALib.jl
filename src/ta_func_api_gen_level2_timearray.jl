@@ -3,7 +3,7 @@ include("path.jl")
 include("tools.jl")
 include("describe.jl")
 
-using DataFrames
+using TimeSeries
 
 d_var_symb = Dict{ASCIIString,Symbol}(
     "inReal" => :price,
@@ -18,15 +18,15 @@ function replace_var_to_symbol(s)
     get(d_var_symb, s, s)
 end
 
-function generate_header_ta_func_with_dataframes()
+function generate_header_ta_func_with_timearray()
     s_code = generate_header()
     s_code *= "\n"
     s_code *= "\n"
-    s_code *= "using DataFrames"
+    s_code *= "using TimeSeries"
     s_code
 end
 
-function generate_ta_func_with_dataframes(d::OrderedDict{Symbol,Any}, symb_func::Symbol)
+function generate_ta_func_with_timearray(d::OrderedDict{Symbol,Any}, symb_func::Symbol)
 
 
     func_info = d[symb_func]
@@ -48,26 +48,26 @@ function generate_ta_func_with_dataframes(d::OrderedDict{Symbol,Any}, symb_func:
         push!(lst_args_name, arg["Name"])
     end
     N = length(lst_args_name)
-    arg_typ = DataFrames.DataFrame
-    ret_typ = DataFrames.DataFrame
+    arg_typ = "TimeSeries.TimeArray"
+    ret_typ = "TimeSeries.TimeArray"
     d_colnames = OrderedDict()
     if lst_args_name==["inReal0", "inReal1"]
-        Ndf_input = 2
-        args = Symbol[:df, :df2]
+        Nta_input = 2
+        args = Symbol[:ta, :ta2]
         d_colnames = OrderedDict(
-            :df=>[:price],
-            :df2=>[:price]
+            :ta=>[:price],
+            :ta2=>[:price]
         )
     else
-        Ndf_input = 1
-        args = Symbol[:df]
+        Nta_input = 1
+        args = Symbol[:ta]
         for arg = func_info["RequiredInputArguments"]
             colname = string(replace_var_to_symbol(arg["Name"]))
             push!(params_lv1, colname)
             push!(params_RequiredInputArguments, colname)
             #s_doc_RequiredInputArguments *= "\n            - $colname"
         end
-        d_colnames[:df] = params_lv1
+        d_colnames[:ta] = params_lv1
     end
 
     params_lv2_with_types = ""
@@ -85,10 +85,9 @@ function generate_ta_func_with_dataframes(d::OrderedDict{Symbol,Any}, symb_func:
                 params_lv1_with_values *= ", "
             end
             if string(colname) == "price"
-                colname = string(colname)
-                params_lv1_with_values *= "Array($arg[$colname])"
+                params_lv1_with_values *= "$arg[$colname].values"
             else
-                params_lv1_with_values *= "Array($arg[:$colname])"
+                params_lv1_with_values *= "$arg[\"$colname\"].values"
             end
             s_doc_RequiredInputArguments *= "\n            - $colname"
         end
@@ -167,19 +166,13 @@ Returns:$(s_doc_OutputArguments)
 
 \"\"\"
 function $funcname($params_lv2_with_types, price=:$(_PRICE))
+    price = string(price)
     result = $funcname($params_lv1_with_values)
-    dfOut = DataFrame()
-    idx = names(df)[1]
-    dfOut[idx] = Array(df[idx])
-"
-
-for (i, arg) in enumerate(params_OutputArguments)
-    s *= "    dfOut[:$arg] = result[:, $i]"
-    s *= "\n"
+    dt = ta.timestamp
+    out = TimeArray(dt, result, $params_OutputArguments)
+    out
 end
-
-s *= "    dfOut
-end"
+"
 
 s
 
