@@ -5,7 +5,13 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
 
 =#
 
-const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
+if is_apple()
+    const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
+elseif is_linux()
+    const TA_LIB_PATH = "/usr/lib/libta_lib.so.0.0.0"
+else
+    error("TALib.jl doesn't support this OS")
+end
 
 INDENT = "    "
 
@@ -104,7 +110,7 @@ _VOLUME=:Volume
     TA_AllCandleSettings = 11
 )
 
-d_typ_to_c = Dict{ASCIIString,Any}(
+d_typ_to_c = Dict{String,Any}(
    "Integer" => :Cint,
    "Double" => :Cdouble,
    "Integer Array" => :(Ptr{Cint}),
@@ -117,7 +123,7 @@ d_typ_to_c = Dict{ASCIIString,Any}(
    "Volume" => :(Ptr{Cdouble}),
 )
 
-d_typ_to_jl = Dict{ASCIIString,Any}(
+d_typ_to_jl = Dict{String,Any}(
    "Integer" => :Integer,
    "Double" => :AbstractFloat,
    "Integer Array" => :(Array{Integer,1}),

@@ -17,8 +17,8 @@ function generate_ta_func_raw(d::OrderedDict{Symbol,Any}, symb_func::Symbol)
     s_doc_OptionalInputArguments = ""
     s_doc_OutputArguments = ""
     
-    params = ASCIIString[]
-    ctypes = ASCIIString[]
+    params = String[]
+    ctypes = String[]
     for arg = ["startIdx", "endIdx"]
         varname = uncamel(arg)
         vartyp = "Cint"

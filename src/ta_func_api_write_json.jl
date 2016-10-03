@@ -16,6 +16,23 @@ function write_json(filename)
     close(f)
 end
 
-filename = basepath() * "generated/ta_func_api.json"
-println("# Write JSON file to '$filename'")
-write_json(filename)
+function write_xml(filename)
+    s_xml = FunctionDescriptionXML()
+    f = open(filename, "w")
+    write(f, s_xml)
+    close(f)
+end
+
+function main()
+    path = joinpath(basepath(), "generated")
+    
+    filename = joinpath(path, "ta_func_api.xml")
+    println("# Write XML file to '$filename'")
+    write_xml(filename)
+
+    filename = joinpath(path, "ta_func_api.json")
+    println("# Write JSON file to '$filename'")
+    write_json(filename)
+end
+
+main()

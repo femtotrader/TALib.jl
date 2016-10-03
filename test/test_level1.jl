@@ -2,9 +2,8 @@ using Base.Test
 epsilon = 1e-10
 eps_price = 1e-6
 
-include("../src/path.jl")
-
 using TALib
+using TALib: basepath
 using TALib: TA_MAType_SMA
 
 using DataFrames
@@ -43,7 +42,7 @@ outReal = ASIN(angles)
 outReal = TAN(angles)
 outReal = ATAN(angles)
 
-filename = basepath() * "ford_2012.csv"
+filename = joinpath(basepath(), "ford_2012.csv")
 dfOHLCV = readtable(filename)
 dfOHLCV[:Date] = Date(dfOHLCV[:Date])
 dt = Array(dfOHLCV[:Date])

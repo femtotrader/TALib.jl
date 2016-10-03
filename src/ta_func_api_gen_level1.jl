@@ -17,13 +17,13 @@ function generate_ta_func_with_arrays(d::OrderedDict{Symbol,Any}, symb_func::Sym
     s_doc_OptionalInputArguments = ""
     s_doc_OutputArguments = ""
     
-    params_lv0 = ASCIIString[]
-    params_lv1 = ASCIIString[]
-    params_RequiredInputArguments = ASCIIString[]
-    params_OptionalInputArguments = ASCIIString[]
-    params_OutputArguments = ASCIIString[]
+    params_lv0 = String[]
+    params_lv1 = String[]
+    params_RequiredInputArguments = String[]
+    params_OptionalInputArguments = String[]
+    params_OutputArguments = String[]
 
-    jltypes = ASCIIString[]
+    jltypes = String[]
 
     for arg = ["startIdx", "endIdx"]
         varname = uncamel(arg)

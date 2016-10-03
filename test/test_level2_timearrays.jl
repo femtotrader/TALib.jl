@@ -2,16 +2,15 @@ using Base.Test
 epsilon = 1e-10
 eps_price = 1e-6
 
-include("../src/path.jl")
-
 # see https://github.com/JuliaQuant/MarketData.jl
 # and https://github.com/JuliaStats/TimeSeries.jl
 
 using TALib
+using TALib: basepath
 
 using TimeSeries
 
-filename = basepath() * "ford_2012.csv"
+filename = joinpath(basepath(), "ford_2012.csv")
 ohlcv = readtimearray(filename)
 
 indic = MA(ohlcv)

@@ -3,19 +3,19 @@ sudo: required
 language: julia
 os:
   - osx
-#  - linux
+  - linux
 julia:
-  - release
+#  - release
+  - 0.5
   - nightly
 notifications:
   email: false
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo find / -type f -name libta_lib\* ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update        ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install ta-lib; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash build_talib_linux.sh; fi
+#  - sudo find / -type f -name libta_lib\*
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
   - julia -e 'Pkg.clone(pwd()); Pkg.build("TALib");'
-  - julia -e 'Pkg.clone("https://github.com/bcbi/XMLconvert.jl.git")'  
-  - bash generate_code.sh
   - julia -e 'Pkg.test("TALib"; coverage=true)'

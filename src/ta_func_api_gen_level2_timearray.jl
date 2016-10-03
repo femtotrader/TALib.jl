@@ -1,22 +1,4 @@
-include("constants.jl")
-include("path.jl")
-include("tools.jl")
-include("describe.jl")
-
 using TimeSeries
-
-d_var_symb = Dict{ASCIIString,Symbol}(
-    "inReal" => :price,
-    "Open" => _OPEN,
-    "High" => _HIGH,
-    "Low" => _LOW,
-    "Close" => _CLOSE,
-    "Volume" => _VOLUME,
-)
-
-function replace_var_to_symbol(s)
-    get(d_var_symb, s, s)
-end
 
 function generate_header_ta_func_with_timearray()
     s_code = generate_header()
@@ -28,6 +10,18 @@ end
 
 function generate_ta_func_with_timearray(d::OrderedDict{Symbol,Any}, symb_func::Symbol)
 
+    d_var_symb = Dict{String,Symbol}(
+        "inReal" => :price,
+        "Open" => _OPEN,
+        "High" => _HIGH,
+        "Low" => _LOW,
+        "Close" => _CLOSE,
+        "Volume" => _VOLUME,
+    )
+    
+    function replace_var_to_symbol(s)
+        get(d_var_symb, s, s)
+    end
 
     func_info = d[symb_func]
 
@@ -37,11 +31,11 @@ function generate_ta_func_with_timearray(d::OrderedDict{Symbol,Any}, symb_func::
 
     params_lv1_with_values = ""
     
-    params_lv1 = ASCIIString[]
-    params_lv2 = ASCIIString[]
-    params_RequiredInputArguments = ASCIIString[]
-    params_OptionalInputArguments = ASCIIString[]
-    params_OutputArguments = ASCIIString[]
+    params_lv1 = String[]
+    params_lv2 = String[]
+    params_RequiredInputArguments = String[]
+    params_OptionalInputArguments = String[]
+    params_OutputArguments = String[]
 
     lst_args_name = AbstractString[]
     for arg = func_info["RequiredInputArguments"]

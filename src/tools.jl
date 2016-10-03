@@ -85,14 +85,14 @@ julia> replace_var("Open")
 ```
 """
 function replace_var(s::AbstractString)
-    d = Dict{ASCIIString, Symbol}(
+    d = Dict{String, Symbol}(
         "Open" => :price_open,
         "High" => :price_high,
         "Low" => :price_low,
         "Close" => :price_close,
         "Volume" => :volume,
     )
-    get(d, s, symbol(s))
+    get(d, s, Symbol(s))
 end
 
 """
@@ -107,9 +107,9 @@ julia> replace_output("outReal")
 ```
 """
 function replace_output(s::AbstractString)
-    d = Dict{ASCIIString, Symbol}(
+    d = Dict{String, Symbol}(
         "outInteger" => :Value,
         "outReal" => :Value,
     )
-    get(d, s, symbol(s))
+    get(d, s, Symbol(s))
 end

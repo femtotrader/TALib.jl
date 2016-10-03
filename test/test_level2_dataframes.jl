@@ -2,13 +2,12 @@ using Base.Test
 epsilon = 1e-10
 eps_price = 1e-6
 
-include("../src/path.jl")
-
 using TALib
+using TALib: basepath
 
 using DataFrames
 
-filename = basepath() * "ford_2012.csv"
+filename = joinpath(basepath(), "ford_2012.csv")
 df = readtable(filename)
 df[:Date] = Date(df[:Date])
 

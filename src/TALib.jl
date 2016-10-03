@@ -1,47 +1,17 @@
 module TALib
 
-using JSON
 using DataStructures
-
-to_export = [:GetVersionString, :GetVersionMajor, :GetVersionMinor, :GetVersionBuild,
-    :FunctionDescriptionXML,
-    :GetVersionDate, :GetVersionTime,
-    :Initialize, :Shutdown,
-]
 
 include("constants.jl")
 include("path.jl")
+
 include("describe.jl")
+D_INDICATORS, INDICATORS, D_GROUPS = get_ta_func_constants()
+export FunctionDescriptionXML
 
-import_generated = true
-for filename in ["ta_func_api_code_level0", 
-            "ta_func_api_code_level1", 
-            "ta_func_api_code_level2_dataframes", 
-            "ta_func_api_code_level2_timearrays"]
-    filename = "generated/" * filename * ".jl"
-    try
-        include(filename)
-    catch
-        warn("$filename doesn't exist")
-        import_generated = false
-    end
-end
-if import_generated
-    for f in [to_export; INDICATORS]
-        @eval begin
-            export ($f)
-        end
-    end
-else
-    warn("code generation is required to use TALib.jl")
-    warn("You need to run: ./generate_code.sh")
-end
+include("tools.jl")
 
-using DataFrames
-
-export D_INDICATORS, INDICATORS, D_GROUPS
-
-function _ta_check_success(function_name::ASCIIString, ret_code::TA_RetCode)
+function _ta_check_success(function_name::String, ret_code::TA_RetCode)
     errorCode = TA_RetCode(ret_code)
 
     if errorCode == TA_SUCCESS::TA_RetCode
@@ -56,9 +26,14 @@ for f in [:GetVersionString, :GetVersionMajor, :GetVersionMinor, :GetVersionBuil
     f_ta_str = "TA_" * f_str
     @eval begin
         function ($f)()
-            bytestring(ccall(($f_ta_str, TA_LIB_PATH), Cstring, ()))
+            unsafe_string(ccall(($f_ta_str, TA_LIB_PATH), Cstring, ()))
         end
     end
+
+    @eval begin
+        export ($f)
+    end
+
 end
 
 # ===
@@ -73,34 +48,52 @@ for f in [:Initialize, :Shutdown]
             _ta_check_success($f_str, ret_code)
         end
     end
+
+    @eval begin
+        export ($f)
+    end
 end
 
-#=
+# ===
 
-function MA(dfOHLCV::DataFrames.DataFrame; time_period=Integer(30), ma_type=TA_MAType(0), price=_PRICE)
-    price = Array(dfOHLCV[price])
-    indic = MA(price, time_period=time_period, ma_type=ma_type)
-    df = DataFrame()
-    idx = names(dfOHLCV)[1]
-    df[idx] = Array(dfOHLCV[idx])
-    df[:Value] = indic
-    df
+code_generators = ["ta_func_api_code_level0", 
+    "ta_func_api_code_level1", 
+    "ta_func_api_code_level2_dataframes", 
+    "ta_func_api_code_level2_timearrays"]
+
+import_generated = true
+for code_generator in code_generators
+    filename = joinpath(basepath(), "generated", code_generator * ".jl")
+    if !isfile(filename)
+        import_generated = false
+        warn("code generation is required for $filename")
+        break
+    end
+end
+if !import_generated
+    warn("code generation is required to use TALib.jl")
+    include("ta_func_api_gen.jl")
 end
 
-
-function BBANDS(dfOHLCV::DataFrames.DataFrame; time_period=Integer(30), deviations_up=AbstractFloat(2.0), deviations_down=AbstractFloat(2.0), ma_type=TA_MAType(0), price=_PRICE)
-    price = Array(dfOHLCV[price])
-    result = BBANDS(price, time_period=time_period, deviations_up=deviations_up, deviations_down=deviations_down, ma_type=ma_type)
-    df = DataFrame()
-    idx = names(dfOHLCV)[1]
-    df[idx] = Array(dfOHLCV[idx])
-    df[:UpperBand] = result[:, 1]
-    df[:MiddleBand] = result[:, 2]
-    df[:LowerBand] = result[:, 3]
-    df
+for code_generator in code_generators
+    filename = joinpath("generated", code_generator * ".jl")
+    try
+        #info("include $filename")
+        include(filename)
+    catch
+        error("$filename doesn't exist")
+    end
 end
 
-=#
+for f in INDICATORS
+    @eval begin
+        export ($f)
+    end
+end
+
+export D_INDICATORS, INDICATORS, D_GROUPS
+
+
 
 
 end # module

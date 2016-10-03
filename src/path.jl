@@ -4,10 +4,10 @@
 Returns base path as String
 """
 function basepath()
-    basepath = Base.source_dir()
-    if typeof(basepath) == Void
-        basepath = ""
+    path = Base.source_dir()
+    if typeof(path) == Void
+        path = ""
     else
-        basepath = basepath * "/"
+        path
     end
 end
