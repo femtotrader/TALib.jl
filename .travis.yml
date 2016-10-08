@@ -12,9 +12,7 @@ notifications:
   email: false
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update        ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install ta-lib; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash build_talib_linux.sh; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash build_talib_linux.sh; fi
 #  - sudo find / -type f -name libta_lib\*
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
   - julia -e 'Pkg.clone(pwd()); Pkg.build("TALib");'

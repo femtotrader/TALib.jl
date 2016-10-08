@@ -5,14 +5,6 @@ inspired by https://github.com/stoni/ta-lib/blob/6edc8d665f145ca7eb19c6992191e0c
 
 =#
 
-if is_apple()
-    const TA_LIB_PATH = "/usr/local/lib/libta_lib.0.0.0.dylib"
-elseif is_linux()
-    const TA_LIB_PATH = "/usr/lib/libta_lib.so.0.0.0"
-else
-    error("TALib.jl doesn't support this OS")
-end
-
 INDENT = "    "
 
 _PRICE=:Close
