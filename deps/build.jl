@@ -17,7 +17,7 @@ if is_apple()
 elseif is_linux()
     #const libta_lib = "/usr/lib/libta_lib.so.0.0.0"
     
-    provides(Sources, URI("http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz"), libta_lib, unpacked_dir="src/ta-lib")
+    provides(Sources, URI("http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz"), libta_lib, unpacked_dir="ta-lib")
     provides(BuildProcess, Autotools(libtarget = "libta_lib", configure_options=["--prefix=/usr"]), libta_lib, os = :Unix)
     
 else
