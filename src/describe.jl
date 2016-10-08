@@ -2,7 +2,7 @@ using DataStructures
 using XMLDict
 
 function FunctionDescriptionXML()
-    unsafe_string(ccall(("TA_FunctionDescriptionXML", TA_LIB_PATH), Cstring, ()))
+    unsafe_string(ccall(("TA_FunctionDescriptionXML", libta_lib), Cstring, ()))
 end
 
 

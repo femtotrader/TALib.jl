@@ -1,4 +1,6 @@
 julia 0.5
+BinDeps
+@osx Homebrew
 XMLDict
 DataStructures
 DataFrames

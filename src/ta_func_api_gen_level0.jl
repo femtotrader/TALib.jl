@@ -91,7 +91,7 @@ Returns:
 \"\"\"
 function $funcname($params)
     ccall(
-        (:$c_funcname, TA_LIB_PATH), $ret_typ, 
+        (:$c_funcname, libta_lib), $ret_typ, 
         ($ctypes),
         $params
     )
