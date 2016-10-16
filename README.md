@@ -1,11 +1,8 @@
 # TA-Lib
 
 [![Build Status](https://travis-ci.org/femtotrader/TALib.jl.svg?branch=master)](https://travis-ci.org/femtotrader/TALib.jl)
-
 [![Build status](https://ci.appveyor.com/api/projects/status/github/femtotrader/TALib.jl?svg=true&branch=master)](https://ci.appveyor.com/project/femtotrader/talib-jl/branch/master)
-
 [![Coverage Status](https://coveralls.io/repos/femtotrader/TALib.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/femtotrader/TALib.jl?branch=master)
-
 [![codecov.io](http://codecov.io/github/femtotrader/TALib.jl/coverage.svg?branch=master)](http://codecov.io/github/femtotrader/TALib.jl?branch=master)
 
 A [Julia](http://julialang.org/) wrapper for [TA-Lib](http://ta-lib.org/) (Technical Analysis Library)
