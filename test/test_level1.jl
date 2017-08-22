@@ -29,14 +29,14 @@ using DataFrames
 
     outReal = COS(angles)
     @test sum(outReal) ≈ 0 atol=epsilon
-    @test outReal == cos(angles)
+    @test outReal == cos.(angles)
     @test COS([float(pi)])[1] == -1
     @test ACOS([0.0])[1] == pi / 2
     outReal = ACOS(angles)
 
     outReal = SIN(angles)
     @test sum(outReal) ≈ 0 atol=epsilon
-    @test outReal == sin(angles)
+    @test outReal == sin.(angles)
     @test SIN([float(pi/2)])[1] == 1
     @test ASIN([1.0])[1] == pi / 2
 
@@ -64,7 +64,7 @@ using DataFrames
     time_period = 10
     indic = MA(price, time_period=time_period, ma_type=TA_MAType_SMA)
     @test indic[end] ≈ 12.219 atol=eps_price
-    @test sum(isnan(indic)) == time_period - 1
+    @test sum(isnan.(indic)) == time_period - 1
 
     indic = BBANDS(price)
     time_period = 5
@@ -72,7 +72,7 @@ using DataFrames
     @test indic[end, 2] ≈ 12.75400 atol=eps_price  # MiddleBand
     @test indic[end, 3] ≈ 12.37609 atol=eps_price  # LowerBand
 
-    @test sum(isnan(indic)) == (time_period - 1) * 3
+    @test sum(isnan.(indic)) == (time_period - 1) * 3
 
     time_period = 10
     indic = BBANDS(price, time_period=time_period, deviations_up=2.0, deviations_down=2.0, ma_type=TA_MAType_SMA)
@@ -80,7 +80,7 @@ using DataFrames
     @test indic[end, 2] ≈ 12.21900 atol=eps_price  # MiddleBand
     @test indic[end, 3] ≈ 11.09332 atol=eps_price  # LowerBand
 
-    @test sum(isnan(indic)) == (time_period - 1) * 3
+    @test sum(isnan.(indic)) == (time_period - 1) * 3
 
     @test Shutdown()
 

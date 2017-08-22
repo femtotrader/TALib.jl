@@ -1,5 +1,6 @@
 using Base.Test
 
+using TALib
 using TALib: TA_RetCode, TA_SUCCESS, _TA_COS
 
 @testset "level 0" begin
@@ -28,7 +29,7 @@ using TALib: TA_RetCode, TA_SUCCESS, _TA_COS
     println("angles: $inReal")
     println("COS(angles): $outReal")
     @test sum(outReal) ≈ 0 atol=epsilon
-    @test outReal == cos(inReal)
+    @test outReal == cos.(inReal)
 
 
     #=
