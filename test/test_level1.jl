@@ -28,14 +28,14 @@ using DataFrames
     angles = [0, pi/2, pi, 3pi/2, 0, pi/2, pi, 3pi/2]
 
     outReal = COS(angles)
-    @test_approx_eq_eps sum(outReal) 0 epsilon
+    @test sum(outReal) ≈ 0 atol=epsilon
     @test outReal == cos(angles)
     @test COS([float(pi)])[1] == -1
     @test ACOS([0.0])[1] == pi / 2
     outReal = ACOS(angles)
 
     outReal = SIN(angles)
-    @test_approx_eq_eps sum(outReal) 0 epsilon
+    @test sum(outReal) ≈ 0 atol=epsilon
     @test outReal == sin(angles)
     @test SIN([float(pi/2)])[1] == 1
     @test ASIN([1.0])[1] == pi / 2
@@ -59,25 +59,27 @@ using DataFrames
     @test price[end] == 12.95
 
     indic = MA(price)
-    @test_approx_eq_eps indic[end] 11.546 eps_price
+    @test indic[end] ≈ 11.546 atol=eps_price
 
     time_period = 10
     indic = MA(price, time_period=time_period, ma_type=TA_MAType_SMA)
-    @test_approx_eq_eps indic[end] 12.219 eps_price
+    @test indic[end] ≈ 12.219 atol=eps_price
     @test sum(isnan(indic)) == time_period - 1
 
     indic = BBANDS(price)
     time_period = 5
-    @test_approx_eq_eps indic[end, 1] 13.13191 eps_price  # UpperBand
-    @test_approx_eq_eps indic[end, 2] 12.75400 eps_price  # MiddleBand
-    @test_approx_eq_eps indic[end, 3] 12.37609 eps_price  # LowerBand
+    @test indic[end, 1] ≈ 13.13191 atol=eps_price  # UpperBand
+    @test indic[end, 2] ≈ 12.75400 atol=eps_price  # MiddleBand
+    @test indic[end, 3] ≈ 12.37609 atol=eps_price  # LowerBand
+
     @test sum(isnan(indic)) == (time_period - 1) * 3
 
     time_period = 10
     indic = BBANDS(price, time_period=time_period, deviations_up=2.0, deviations_down=2.0, ma_type=TA_MAType_SMA)
-    @test_approx_eq_eps indic[end, 1] 13.34468 eps_price  # UpperBand
-    @test_approx_eq_eps indic[end, 2] 12.21900 eps_price  # MiddleBand
-    @test_approx_eq_eps indic[end, 3] 11.09332 eps_price  # LowerBand
+    @test indic[end, 1] ≈ 13.34468 atol=eps_price  # UpperBand
+    @test indic[end, 2] ≈ 12.21900 atol=eps_price  # MiddleBand
+    @test indic[end, 3] ≈ 11.09332 atol=eps_price  # LowerBand
+
     @test sum(isnan(indic)) == (time_period - 1) * 3
 
     @test Shutdown()

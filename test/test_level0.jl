@@ -27,7 +27,7 @@ using TALib: TA_RetCode, TA_SUCCESS, _TA_COS
     @test errorCode == TA_SUCCESS::TA_RetCode
     println("angles: $inReal")
     println("COS(angles): $outReal")
-    @test_approx_eq_eps sum(outReal) 0 epsilon
+    @test sum(outReal) ≈ 0 atol=epsilon
     @test outReal == cos(inReal)
 
 
